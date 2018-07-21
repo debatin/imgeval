@@ -1,0 +1,4 @@
+#ifndef FITFUNCTIONS2D_H
+#define FITFUNCTIONS2D_H
+
+#endif // FITFUNCTIONS2D_H

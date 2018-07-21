@@ -1,0 +1,7 @@
+
+-- Diese und die folgenden Zeilen werden ignoriert --
+
+M    imgeval/qtc-gdbmacros/Makefile.Debug
+M    imgeval/qtc-gdbmacros/Makefile.Release
+M    imgeval/qtc-gdbmacros/Makefile
+M    imgeval/atomimg.cpp

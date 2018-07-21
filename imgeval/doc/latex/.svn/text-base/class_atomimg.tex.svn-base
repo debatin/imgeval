@@ -1,0 +1,439 @@
+\hypertarget{class_atomimg}{
+\section{Atomimg Class Reference}
+\label{class_atomimg}\index{Atomimg@{Atomimg}}
+}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_atomimg_ac9a5377f8a98b3208e69b67c386d502d}{
+void \hyperlink{class_atomimg_ac9a5377f8a98b3208e69b67c386d502d}{updateSidegraphs} ()}
+\label{class_atomimg_ac9a5377f8a98b3208e69b67c386d502d}
+
+\begin{DoxyCompactList}\small\item\em called internally to update the addtional graphs \item\end{DoxyCompactList}\item 
+\hypertarget{class_atomimg_a4a04129c378e345e9cf6d4dc0e13be4c}{
+void \hyperlink{class_atomimg_a4a04129c378e345e9cf6d4dc0e13be4c}{toggleSubtract} (bool toggled)}
+\label{class_atomimg_a4a04129c378e345e9cf6d4dc0e13be4c}
+
+\begin{DoxyCompactList}\small\item\em subtract region should be used or not \item\end{DoxyCompactList}\item 
+void \hyperlink{class_atomimg_addae53a2d8a8f200fa769ca5f64ca0c8}{selectImg} ()
+\begin{DoxyCompactList}\small\item\em shows a dialog in which the user can select which Image to display \item\end{DoxyCompactList}\item 
+void \hyperlink{class_atomimg_ad72f49378bdc765051bd13bbfbaa5069}{markerchanged} (QString name, QPointF pos)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_atomimg_a0a30432dc3d185b6a90261d3c9b20de1}{
+\hyperlink{class_atomimg_a0a30432dc3d185b6a90261d3c9b20de1}{Atomimg} (QWidget $\ast$parent=0)}
+\label{class_atomimg_a0a30432dc3d185b6a90261d3c9b20de1}
+
+\begin{DoxyCompactList}\small\item\em constructor you probably don't want to use it \item\end{DoxyCompactList}\item 
+\hyperlink{class_atomimg_ac18f2c96b38db252d9a92be2fd5746f5}{Atomimg} (\hyperlink{class_dataset}{Dataset} $\ast$mresults, \hyperlink{class_dataset}{Dataset} $\ast$settings, std::string s\_\-name, \hyperlink{class_main_window}{MainWindow} $\ast$central, QWidget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor taking allnecessary parameters. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_atomimg_a5ceab12f92f73a0401f5f63e2c93a79b}{init} ()
+\item 
+void \hyperlink{class_atomimg_aff959b1f93ea79d96f406b7c575b0acf}{createActions} ()
+\item 
+\hypertarget{class_atomimg_ac8170fa51d538f7a265513f916e55826}{
+void {\bfseries updateParamBox} ()}
+\label{class_atomimg_ac8170fa51d538f7a265513f916e55826}
+
+\item 
+\hypertarget{class_atomimg_afc40cec6c21314c3cb57bf7dc8f6220c}{
+void {\bfseries setMeasurement} (QString m)}
+\label{class_atomimg_afc40cec6c21314c3cb57bf7dc8f6220c}
+
+\item 
+void \hyperlink{class_atomimg_a7e02e49acf137262682e359e4f4fdac9}{reloadData} ()
+\begin{DoxyCompactList}\small\item\em sets the Measurement number \item\end{DoxyCompactList}\item 
+\hypertarget{class_atomimg_a24675d59f7e568619b220ddb29bda231}{
+void \hyperlink{class_atomimg_a24675d59f7e568619b220ddb29bda231}{standardAbsorptionCalcualtions} ()}
+\label{class_atomimg_a24675d59f7e568619b220ddb29bda231}
+
+\begin{DoxyCompactList}\small\item\em does standard calculations for absorption imaging \item\end{DoxyCompactList}\item 
+void \hyperlink{class_atomimg_a7c6c59f8e4aea448a26746dcd9723f39}{reloadBackground} ()
+\begin{DoxyCompactList}\small\item\em loads or reloads background imgs \item\end{DoxyCompactList}\item 
+void \hyperlink{class_atomimg_a19ac0d2137b5a19afbb929bf3ab4ab00}{fitData} ()
+\begin{DoxyCompactList}\small\item\em performs and plots fits \item\end{DoxyCompactList}\item 
+void \hyperlink{class_atomimg_a831ebf5f36119254e7d65af6d96423b8}{perform1DFit} (vector$<$ float $>$ fitdaty, vector$<$ float $>$ \&fitparams, string direction, \hyperlink{class_graph_plotter}{GraphPlotter} $\ast$graph)
+\item 
+vector$<$ float $>$ \hyperlink{class_atomimg_a62f7f66d1b1a4740563a121af77bd34e}{perform1DSpecialBimodal} (vector$<$ float $>$ fitdaty, vector$<$ float $>$ fitdatx, \hyperlink{class_graph_plotter}{GraphPlotter} $\ast$graph)
+\item 
+void \hyperlink{class_atomimg_afc21bc4ccabc868deb3efbda0166954c}{plotfunction} (const vector$<$ float $>$ \&fitparams, int npoints, \hyperlink{class_graph_plotter}{GraphPlotter} $\ast$graph, string fitname=\char`\"{}gaussian\char`\"{})
+\item 
+void \hyperlink{class_atomimg_ae0b53227a035bc2e65ee87a62256b76e}{plotxy} (const vector$<$ float $>$ \&datax, const vector$<$ float $>$ \&datay, \hyperlink{class_graph_plotter}{GraphPlotter} $\ast$graph)
+\item 
+\hypertarget{class_atomimg_a0c6550434ad9ec62620771694395b836}{
+void {\bfseries storeGaussian} (const vector$<$ float $>$ \&fitparams, int offset, string pname)}
+\label{class_atomimg_a0c6550434ad9ec62620771694395b836}
+
+\item 
+void \hyperlink{class_atomimg_a970615bbf8cad4885818dbb993d7c257}{storeBimodal} (const vector$<$ float $>$ \&fitparams, int offset, string pname)
+\item 
+void \hyperlink{class_atomimg_a022dbe5f7252f8b73db8c2f03f306344}{storeFitparams} (const vector$<$ float $>$ \&fitparams, string pname)
+\item 
+void \hyperlink{class_atomimg_a0bc0a2970fc807403c4240f204751c2c}{savePNG} ()
+\item 
+void \hyperlink{class_atomimg_aab4cb735345a43bd80b5b798490a3282}{saveMAT} ()
+\item 
+\hypertarget{class_atomimg_aaf0166eb492d85bb85d1b035122aa2fc}{
+string {\bfseries getname} ()}
+\label{class_atomimg_aaf0166eb492d85bb85d1b035122aa2fc}
+
+\item 
+\hypertarget{class_atomimg_a41a88b957bf8f5d7e21fc260bdc7d949}{
+void \hyperlink{class_atomimg_a41a88b957bf8f5d7e21fc260bdc7d949}{markerpos\_\-changed} (string name, QPointF pos)}
+\label{class_atomimg_a41a88b957bf8f5d7e21fc260bdc7d949}
+
+\begin{DoxyCompactList}\small\item\em synchronzation of markers \item\end{DoxyCompactList}\item 
+\hypertarget{class_atomimg_acaefa7202c8197f3215fe77fcb1edf88}{
+void \hyperlink{class_atomimg_acaefa7202c8197f3215fe77fcb1edf88}{setImage} ()}
+\label{class_atomimg_acaefa7202c8197f3215fe77fcb1edf88}
+
+\begin{DoxyCompactList}\small\item\em ! internal function to display one of the images \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_atomimg_a0d86e38154509efb7d3617ad41238e9a}{
+\hyperlink{class_main_window}{MainWindow} $\ast$ {\bfseries mainapp}}
+\label{class_atomimg_a0d86e38154509efb7d3617ad41238e9a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_atomimg_adc1d96715fa449f77b6b7fcb78855b7e}{
+void {\bfseries contextMenuEvent} (QContextMenuEvent $\ast$event)}
+\label{class_atomimg_adc1d96715fa449f77b6b7fcb78855b7e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 40 of file atomimg.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_atomimg_ac18f2c96b38db252d9a92be2fd5746f5}{
+\index{Atomimg@{Atomimg}!Atomimg@{Atomimg}}
+\index{Atomimg@{Atomimg}!Atomimg@{Atomimg}}
+\subsubsection[{Atomimg}]{\setlength{\rightskip}{0pt plus 5cm}Atomimg::Atomimg (
+\begin{DoxyParamCaption}
+\item[{{\bf Dataset} $\ast$}]{ mresults, }
+\item[{{\bf Dataset} $\ast$}]{ settings, }
+\item[{std::string}]{ s\_\-name, }
+\item[{{\bf MainWindow} $\ast$}]{ center, }
+\item[{QWidget $\ast$}]{ parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_ac18f2c96b38db252d9a92be2fd5746f5}
+
+
+Constructor taking allnecessary parameters. 
+
+Use this consructor to creae a working insance of this object 
+\begin{DoxyParams}{Parameters}
+{\em mresults} & container to store measurement results \\
+\hline
+{\em setings} & container o store general settings \\
+\hline
+{\em s\_\-name} & name of the insance for ex. \char`\"{}Rb\char`\"{}. Serves to identify the corresponding arameters for ex \char`\"{}Rbdetuning\char`\"{} \\
+\hline
+{\em center} & pointer to central Applet used for function calls \\
+\hline
+{\em parent} & see Qt QWidget \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file atomimg.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_atomimg_aff959b1f93ea79d96f406b7c575b0acf}{
+\index{Atomimg@{Atomimg}!createActions@{createActions}}
+\index{createActions@{createActions}!Atomimg@{Atomimg}}
+\subsubsection[{createActions}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::createActions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_aff959b1f93ea79d96f406b7c575b0acf}
+creates actions for the context menu (called by init routine) 
+
+Definition at line 624 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a19ac0d2137b5a19afbb929bf3ab4ab00}{
+\index{Atomimg@{Atomimg}!fitData@{fitData}}
+\index{fitData@{fitData}!Atomimg@{Atomimg}}
+\subsubsection[{fitData}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::fitData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a19ac0d2137b5a19afbb929bf3ab4ab00}
+
+
+performs and plots fits 
+
+Calls fits and evaluates results 
+
+Definition at line 323 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a5ceab12f92f73a0401f5f63e2c93a79b}{
+\index{Atomimg@{Atomimg}!init@{init}}
+\index{init@{init}!Atomimg@{Atomimg}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a5ceab12f92f73a0401f5f63e2c93a79b}
+called by the constructor. Mainly controlls Layout 
+
+Definition at line 72 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_ad72f49378bdc765051bd13bbfbaa5069}{
+\index{Atomimg@{Atomimg}!markerchanged@{markerchanged}}
+\index{markerchanged@{markerchanged}!Atomimg@{Atomimg}}
+\subsubsection[{markerchanged}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::markerchanged (
+\begin{DoxyParamCaption}
+\item[{QString}]{ mname, }
+\item[{QPointF}]{ pos}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_atomimg_ad72f49378bdc765051bd13bbfbaa5069}
+synchronization of markers 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the marker that is changed \\
+\hline
+{\em pos} & position the marker is moved to this function is connected to a signal with the same name emitted by the mainapplication the emission of the signal is triggered by calling mainapp-\/$>$changemarker if the name of the marker if \char`\"{}...marker..\char`\"{} (not fitstart) then this marker is moved to the same/corresponding position \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 723 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a831ebf5f36119254e7d65af6d96423b8}{
+\index{Atomimg@{Atomimg}!perform1DFit@{perform1DFit}}
+\index{perform1DFit@{perform1DFit}!Atomimg@{Atomimg}}
+\subsubsection[{perform1DFit}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::perform1DFit (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$}]{ fitdaty, }
+\item[{vector$<$ float $>$ \&}]{ fitparams, }
+\item[{string}]{ direction, }
+\item[{{\bf GraphPlotter} $\ast$}]{ graph}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a831ebf5f36119254e7d65af6d96423b8}
+performs 1D fits on given y data the fit is selected according to the settings it also calls the drawing routines 
+\begin{DoxyParams}{Parameters}
+{\em fitdaty} & y-\/values of the data to be fitted \\
+\hline
+{\em fitparams} & fitted parameters \\
+\hline
+{\em direction} & tells whether this is an x-\/Fit or an y fit Values \char`\"{}x\char`\"{} or \char`\"{}y\char`\"{} \\
+\hline
+{\em graph} & where the results should be plotted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 369 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a62f7f66d1b1a4740563a121af77bd34e}{
+\index{Atomimg@{Atomimg}!perform1DSpecialBimodal@{perform1DSpecialBimodal}}
+\index{perform1DSpecialBimodal@{perform1DSpecialBimodal}!Atomimg@{Atomimg}}
+\subsubsection[{perform1DSpecialBimodal}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ float $>$ Atomimg::perform1DSpecialBimodal (
+\begin{DoxyParamCaption}
+\item[{vector$<$ float $>$}]{ fitdaty, }
+\item[{vector$<$ float $>$}]{ fitdatx, }
+\item[{{\bf GraphPlotter} $\ast$}]{ graph}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a62f7f66d1b1a4740563a121af77bd34e}
+performs a special version of a bimodal fit according to a paper from 2009 in Rev of Scientific instruments. returns the fitted params according to the following function(bose enhanced gaussian + thomas Fermi): bgauss+tf where: bgauss = x0$\ast$g\_\-5/2(e$^\wedge$((x-\/x1)$^\wedge$2/x2))+x3 tf=x4$\ast$max(0,(1-\/((i-\/x6)$^\wedge$2/x5$^\wedge$2)$^\wedge$(3/2)) 
+\begin{DoxyParams}{Parameters}
+{\em fitdaty} & y Valuues of the Data to be fitted \\
+\hline
+{\em fitdatx} & x-\/Values of tzhe data to be fitted \\
+\hline
+{\em graph} & where the results are plotted \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 411 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_afc21bc4ccabc868deb3efbda0166954c}{
+\index{Atomimg@{Atomimg}!plotfunction@{plotfunction}}
+\index{plotfunction@{plotfunction}!Atomimg@{Atomimg}}
+\subsubsection[{plotfunction}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::plotfunction (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ float $>$ \&}]{ p, }
+\item[{int}]{ npoints, }
+\item[{{\bf GraphPlotter} $\ast$}]{ graph, }
+\item[{string}]{ fitname = {\ttfamily \char`\"{}gaussian\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_afc21bc4ccabc868deb3efbda0166954c}
+plot a function according to the parameters resulting from the fit 
+\begin{DoxyParams}{Parameters}
+{\em p} & parameter of the function to plot \\
+\hline
+{\em npoints} & number of points in x-\/Direction to plot \\
+\hline
+{\em graph} & plotting Engine \\
+\hline
+{\em string} & fitname lets you select the type of function to plot \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 497 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_ae0b53227a035bc2e65ee87a62256b76e}{
+\index{Atomimg@{Atomimg}!plotxy@{plotxy}}
+\index{plotxy@{plotxy}!Atomimg@{Atomimg}}
+\subsubsection[{plotxy}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::plotxy (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ float $>$ \&}]{ datax, }
+\item[{const vector$<$ float $>$ \&}]{ datay, }
+\item[{{\bf GraphPlotter} $\ast$}]{ graph}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_ae0b53227a035bc2e65ee87a62256b76e}
+plots data given as two verctors 
+\begin{DoxyParams}{Parameters}
+{\em datax} & x Component of the data points \\
+\hline
+{\em datay} & y-\/component of data points \\
+\hline
+{\em graph} & Plotting Engine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 531 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a7c6c59f8e4aea448a26746dcd9723f39}{
+\index{Atomimg@{Atomimg}!reloadBackground@{reloadBackground}}
+\index{reloadBackground@{reloadBackground}!Atomimg@{Atomimg}}
+\subsubsection[{reloadBackground}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::reloadBackground (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a7c6c59f8e4aea448a26746dcd9723f39}
+
+
+loads or reloads background imgs 
+
+called internally to reload background files loads the backgroundfiles for the atomimgs according to the settings. It also stores the names locally in order to be able to check whether the backgrounds have changed 
+
+Definition at line 284 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a7e02e49acf137262682e359e4f4fdac9}{
+\index{Atomimg@{Atomimg}!reloadData@{reloadData}}
+\index{reloadData@{reloadData}!Atomimg@{Atomimg}}
+\subsubsection[{reloadData}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::reloadData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a7e02e49acf137262682e359e4f4fdac9}
+
+
+sets the Measurement number 
+
+does image evaluation and calculations
+
+reloads the image and performs image calcultaions The images are loaded from files and the main image calculations are performed The image with and without atoms are loaded. Next the images are devided and the crossection is calculated using = crossect$\ast$(lambda$^\wedge$2/(1+(2$\ast$detuning/linewidth)$^\wedge$2) The images are calculated to represent the number of atoms per pixel 
+
+if this is already modified raw data the background should not 
+
+
+
+Definition at line 155 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_aab4cb735345a43bd80b5b798490a3282}{
+\index{Atomimg@{Atomimg}!saveMAT@{saveMAT}}
+\index{saveMAT@{saveMAT}!Atomimg@{Atomimg}}
+\subsubsection[{saveMAT}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::saveMAT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_aab4cb735345a43bd80b5b798490a3282}
+save the displayed image as matlab file 
+
+Definition at line 604 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a0bc0a2970fc807403c4240f204751c2c}{
+\index{Atomimg@{Atomimg}!savePNG@{savePNG}}
+\index{savePNG@{savePNG}!Atomimg@{Atomimg}}
+\subsubsection[{savePNG}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::savePNG (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a0bc0a2970fc807403c4240f204751c2c}
+save the displayed image as png or other image file 
+
+Definition at line 598 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_addae53a2d8a8f200fa769ca5f64ca0c8}{
+\index{Atomimg@{Atomimg}!selectImg@{selectImg}}
+\index{selectImg@{selectImg}!Atomimg@{Atomimg}}
+\subsubsection[{selectImg}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::selectImg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{class_atomimg_addae53a2d8a8f200fa769ca5f64ca0c8}
+
+
+shows a dialog in which the user can select which Image to display 
+
+this function is available by Mouseclick with the right button onto an image 
+
+Definition at line 676 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a970615bbf8cad4885818dbb993d7c257}{
+\index{Atomimg@{Atomimg}!storeBimodal@{storeBimodal}}
+\index{storeBimodal@{storeBimodal}!Atomimg@{Atomimg}}
+\subsubsection[{storeBimodal}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::storeBimodal (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ float $>$ \&}]{ fitparams, }
+\item[{int}]{ roi\_\-offset, }
+\item[{string}]{ fitname}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a970615bbf8cad4885818dbb993d7c257}
+interprete the fitting results and store the corresponding data 
+
+Definition at line 569 of file atomimg.cpp.
+
+\hypertarget{class_atomimg_a022dbe5f7252f8b73db8c2f03f306344}{
+\index{Atomimg@{Atomimg}!storeFitparams@{storeFitparams}}
+\index{storeFitparams@{storeFitparams}!Atomimg@{Atomimg}}
+\subsubsection[{storeFitparams}]{\setlength{\rightskip}{0pt plus 5cm}void Atomimg::storeFitparams (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ float $>$ \&}]{ fitparams, }
+\item[{string}]{ fitname}
+\end{DoxyParamCaption}
+)}}
+\label{class_atomimg_a022dbe5f7252f8b73db8c2f03f306344}
+just store the fitting parameters as they are 
+
+Definition at line 585 of file atomimg.cpp.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/gui\_\-graphs/atomimg.h\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/gui\_\-graphs/atomimg.cpp\end{DoxyCompactItemize}

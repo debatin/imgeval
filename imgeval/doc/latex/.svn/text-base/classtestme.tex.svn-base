@@ -1,0 +1,33 @@
+\hypertarget{classtestme}{
+\section{testme Class Reference}
+\label{classtestme}\index{testme@{testme}}
+}
+
+
+Draws axis and background lines for the graphs.  
+
+
+
+
+{\ttfamily \#include $<$graphaxis.h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classtestme_aabd2ac6a58cf5eb6b1b7300b02b73a22}{
+int {\bfseries i}}
+\label{classtestme_aabd2ac6a58cf5eb6b1b7300b02b73a22}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Draws axis and background lines for the graphs. Draws graph axis and Background Lines a scaling of 1 means Values of the curves correspond to values in pixel. Axis will range from 0to 1000 and from 0 to 300 
+
+Definition at line 11 of file graphaxis.h.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/gui\_\-graphs/graphaxis.h\end{DoxyCompactItemize}

@@ -1,0 +1,224 @@
+#include "perform_fits.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
+#include <gsl/gsl_vector.h>
+#include <gsl/gsl_blas.h>
+#include <gsl/gsl_multifit_nlin.h>
+#include <gsl/gsl_errno.h>
+#include "fitfunctions.h"
+#include "fitfunctions_bimodal.h"
+#include "fitfunctions_gauss_bose.h"
+#include <vector>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void print_state (size_t iter, gsl_multifit_fdfsolver * s);
+
+
+
+/*! Wrap around for calling with one vector containing y values
+\param xdata x-coordinates of the data to be fitted
+\param ydata y-coordinates of the data to be fitted
+\param startin params and resulting fitted params
+\param fitname name of the fitfunction to use
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+int perform_fits (const std::vector<float> ydata ,
+                  std::vector<float> &params,string fitname)
+{
+    vector<float> xdata(ydata.size());  //take the right size from beginning to speed up
+    for(uint i =0;i<xdata.size();i++) xdata[i]=i;  //x[i] = i;
+    return perform_fits(xdata,ydata,params,fitname);
+}
+
+
+/*! Wrap around for calling with one vector containing y values
+\param xdata x-coordinates of the data to be fitted
+\param ydata y-coordinates of the data to be fitted
+\param startin params and resulting fitted params
+\param fitname name of the fitfunction to use
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+int perform_fits (const std::vector<float> xdata, const std::vector<float> ydata ,
+                  std::vector<float> &params,string fitname)
+{
+    if(xdata.size()!=ydata.size()) return -1;   //for every x-value there must exist a corresponding y
+    if(xdata.size()<=params.size()+1) return -1; // don't fit if not enough data
+    double y[xdata.size()];
+    double x[xdata.size()];
+    double param[params.size()];
+    double fdata[xdata.size()];
+
+    for(uint i =0;i<xdata.size();i++){
+        y[i]=ydata[i];
+        x[i]=xdata[i];
+    }
+    for(uint i =0;i<params.size();i++) param[i]=params[i];
+    int errcode= perform_fits(x,y,ydata.size(),param,params.size(),fdata,fitname);
+    for(uint i =0;i<params.size();i++) params[i]=param[i];
+    return errcode;
+}
+
+
+/*! used to implement constraints for fits
+  (implemented below))
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void implement_constraints(gsl_multifit_fdfsolver *s, string fitname);
+
+
+/*! perform gaussian fit 
+  A least squares fit is performed using a
+  scaled Levenberg-Marquardt algorithm from the
+  GSL (Gnu Scientific Library)
+  \param x values to be fitted
+  \param y values to be fitted
+  \param ny # of values
+  \param params initial values of the parameters
+  \param nparams Number of Parameters
+  \param fitteddata containing the fitted curve
+  \param fitfunction name of the function to be fitted "bimodal", "gaussian"
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+int perform_fits (double* xdata, double* y , const int ny,
+		  double* params,const  int nparams,
+                  double* fitteddata, string fitname)
+{
+
+    int i, iter = 0;
+    /* This is the data to be fitted */
+    double  sigma[ny];
+    for (i = 0; i < ny; i++) sigma[i] = 0.1; //we dont use errors yet
+    struct data dat = { ny,xdata, y, sigma};
+
+
+    gsl_set_error_handler_off();  //turn off error handler
+    //otherwise application will break on minor computation errors.
+    const gsl_multifit_fdfsolver_type *T;
+    gsl_multifit_fdfsolver *s;
+    int status;
+
+    gsl_matrix *covar = gsl_matrix_alloc (nparams, nparams);
+    gsl_multifit_function_fdf f;
+
+    gsl_vector_view x = gsl_vector_view_array (params, nparams);
+    const gsl_rng_type * type;
+    gsl_rng * r;
+    gsl_rng_env_setup();
+    type = gsl_rng_default;
+    r = gsl_rng_alloc (type);
+
+    //******************   functions *************************
+    if(fitname=="bimodal"){
+        f.f = &bimodal1d_f;
+        f.df = &bimodal1d_df;
+        f.fdf = &bimodal1d_fdf;
+    }
+    else if(fitname=="bose_gaussian"){
+        f.f = &bose_gaussian_f;
+        f.df = &bose_gaussian_df;
+        f.fdf = &bose_gaussian_fdf;
+    }
+    else if(fitname=="thomas_fermi"){
+        f.f =  &thomas_fermi1d_f;
+        f.df = &thomas_fermi1d_df;
+        f.fdf =&thomas_fermi1d_fdf;
+    }
+    else{
+        f.f = &gaussian_f;
+        f.df = &gaussian_df;
+        f.fdf = &gaussian_fdf;
+    }
+    f.n = ny;        //number of data
+    f.p = nparams;        //number of params
+    f.params = &dat;  //params and data
+
+
+
+    T = gsl_multifit_fdfsolver_lmsder;
+    s = gsl_multifit_fdfsolver_alloc (T, ny, nparams);
+    gsl_multifit_fdfsolver_set (s, &f, &x.vector);
+
+    //print_state (iter, s);
+    //fitting iterations
+    do
+    {
+        iter++;
+        implement_constraints(s, fitname);
+        status = gsl_multifit_fdfsolver_iterate (s);
+        if(fitname=="thomas_fermi") print_state (iter, s);
+        if (status) break;  //breaks if error occured or fit better than accuracy
+        status = gsl_multifit_test_delta (s->dx, s->x,1e-9, 1e-9);
+    }
+    while (status == GSL_CONTINUE && iter < 1000);
+
+
+    //store fitted params
+#define FIT(i) gsl_vector_get(s->x, i)
+    for(int i = 0;i<nparams;i++) params[i]=FIT(i);
+
+    //get covariance information.
+    gsl_multifit_covar (s->J, 0.0, covar);
+#define ERR(i) sqrt(gsl_matrix_get(covar,i,i))
+
+    double chi = gsl_blas_dnrm2(s->f);
+    double dof = ny - nparams;
+    //double c = GSL_MAX_DBL(1, chi / sqrt(dof));
+    
+    //printf("chisq/dof = %g\n",  pow(chi, 2.0) / dof);
+    /*
+  printf ("A      = %.5f +/- %.5f\n", FIT(0), c*ERR(0));
+  printf ("lambda = %.5f +/- %.5f\n", FIT(1), c*ERR(1));
+  printf ("b      = %.5f +/- %.5f\n", FIT(2), c*ERR(2));
+  */
+    //printf ("status = %s\n", gsl_strerror (status));
+
+
+    //free resources
+    gsl_multifit_fdfsolver_free (s);
+    gsl_matrix_free (covar);
+    gsl_rng_free (r);
+    return 0;
+}
+
+
+void implement_constraints(gsl_multifit_fdfsolver *s, string fitname)
+{
+    if(fitname=="bimodal"){ //constraints for bimodal fit}
+        double x2 = gsl_vector_get (s->x, 2);
+        double x5 = gsl_vector_get (s->x, 5);
+        double x4 = gsl_vector_get (s->x, 4);
+        if(x2<x5*x5)
+            gsl_vector_set (s->x, 5,sqrt(x2));
+        if(x4<0)
+            gsl_vector_set (s->x, 4,0);
+    }
+}
+
+
+/*! print current fitting information
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+
+void print_state (size_t iter, gsl_multifit_fdfsolver * s)
+{
+    //  ofstream ofile("fit.log",std::ios::app);
+    ofstream of("fitlog.txt",std::ios::app);
+    of<<iter<<"; "<< gsl_vector_get (s->x, 0)<<
+            "; "<<gsl_vector_get (s->x, 1)<<
+            "; "<<gsl_vector_get (s->x, 2)<<
+            //"; "<<gsl_vector_get (s->x, 3)<<
+            //"; "<<gsl_vector_get (s->x, 4)<<
+            //"; "<<gsl_vector_get (s->x, 5)<<
+            ", "<<gsl_blas_dnrm2 (s->f)<<std::endl;
+    of.close();
+}

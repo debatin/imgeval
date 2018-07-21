@@ -1,0 +1,129 @@
+\hypertarget{class_input_list}{
+\section{InputList Class Reference}
+\label{class_input_list}\index{InputList@{InputList}}
+}
+Path and Measurement selection.  
+
+
+{\tt \#include $<$inputlist.h$>$}
+
+\subsection*{Public Slots}
+\begin{CompactItemize}
+\item 
+void \hyperlink{class_input_list_36d4f06e3929f82e71bd2429be776f13}{insertNewData} (QString newdata)
+\begin{CompactList}\small\item\em current selected Directory \item\end{CompactList}\item 
+void \hyperlink{class_input_list_23a669cb1d1b927350a85639d7b5d6c6}{dirmodified} (QString dd)
+\begin{CompactList}\small\item\em for debugging \item\end{CompactList}\item 
+void \hyperlink{class_input_list_03015f736a0d4684e255f89f26d4590b}{scandir} ()
+\begin{CompactList}\small\item\em scans the directory for new measurements \item\end{CompactList}\item 
+void \hyperlink{class_input_list_5644d4b644bf4fb1849bfe89b68559ec}{selectD} ()
+\begin{CompactList}\small\item\em Show directory selection dialog. \item\end{CompactList}\item 
+\hypertarget{class_input_list_7d385f9b42cd289071bc575261589dd4}{
+void \hyperlink{class_input_list_7d385f9b42cd289071bc575261589dd4}{measnrChanged} (const QString meas)}
+\label{class_input_list_7d385f9b42cd289071bc575261589dd4}
+
+\begin{CompactList}\small\item\em called if differend dataset is selected \item\end{CompactList}\item 
+\hypertarget{class_input_list_e8d041be4e423768a888856eba3d5cd2}{
+void \hyperlink{class_input_list_e8d041be4e423768a888856eba3d5cd2}{ReloadData} ()}
+\label{class_input_list_e8d041be4e423768a888856eba3d5cd2}
+
+\begin{CompactList}\small\item\em triggers the reloading of the data (emits measSelected) \item\end{CompactList}\item 
+\hypertarget{class_input_list_258a10106a7eff5f879c615d25098b69}{
+void \textbf{createActions} ()}
+\label{class_input_list_258a10106a7eff5f879c615d25098b69}
+
+\end{CompactItemize}
+\subsection*{Signals}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_89d58b3cffd4bec9d8e32bce7458a80d}{
+void \textbf{measSelected} (QString meas)}
+\label{class_input_list_89d58b3cffd4bec9d8e32bce7458a80d}
+
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_96dc3f6c58a303932aa34c98f32d83af}{
+\hyperlink{class_input_list_96dc3f6c58a303932aa34c98f32d83af}{InputList} (\hyperlink{class_dataset}{Dataset} $\ast$settings, MainWindow $\ast$mainapp, QWidget $\ast$parent=0)}
+\label{class_input_list_96dc3f6c58a303932aa34c98f32d83af}
+
+\begin{CompactList}\small\item\em constructor for GUI \item\end{CompactList}\item 
+\hypertarget{class_input_list_354a805c0276577e1e04084622b7475d}{
+QDir \textbf{getDir} ()}
+\label{class_input_list_354a805c0276577e1e04084622b7475d}
+
+\end{CompactItemize}
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_3bf71eaf1f6651901e1911bd71035c99}{
+MainWindow $\ast$ \textbf{mainapp}}
+\label{class_input_list_3bf71eaf1f6651901e1911bd71035c99}
+
+\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_665a5b3ce65df80e18f91c5e292d4d2f}{
+void \textbf{contextMenuEvent} (QContextMenuEvent $\ast$event)}
+\label{class_input_list_665a5b3ce65df80e18f91c5e292d4d2f}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Path and Measurement selection. 
+
+Allows to select a path to the Pictures taken. Scanns the directory for Filesequences named appropriately and includes the found filesequences in a measurement selector
+
+The directory is rescanned every \char`\"{}directory\_\-rescan\_\-time\char`\"{} seconds for new measurements. the path is stored, when the programm is quit and restored afterwards.
+
+The scanning is controlled by \char`\"{}directory\_\-rescan\_\-mode\char`\"{} which is a bitmask 0001 = rescan automatically 0010 = rescan for files newer than the last files found only 0100 = load and proceed new data found 1000 = rescan on incoming udp signal (not yet implemented) 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_input_list_23a669cb1d1b927350a85639d7b5d6c6}{
+\index{InputList@{InputList}!dirmodified@{dirmodified}}
+\index{dirmodified@{dirmodified}!InputList@{InputList}}
+\subsubsection[{dirmodified}]{\setlength{\rightskip}{0pt plus 5cm}void InputList::dirmodified (QString {\em dd})\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_input_list_23a669cb1d1b927350a85639d7b5d6c6}
+
+
+for debugging 
+
+for debugging thins only \hypertarget{class_input_list_36d4f06e3929f82e71bd2429be776f13}{
+\index{InputList@{InputList}!insertNewData@{insertNewData}}
+\index{insertNewData@{insertNewData}!InputList@{InputList}}
+\subsubsection[{insertNewData}]{\setlength{\rightskip}{0pt plus 5cm}void InputList::insertNewData (QString {\em newdata})\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_input_list_36d4f06e3929f82e71bd2429be776f13}
+
+
+current selected Directory 
+
+called by the thread when newdata is found
+
+called if new data is found inserts the data into the list and selects it if the appropriate button is checked \hypertarget{class_input_list_03015f736a0d4684e255f89f26d4590b}{
+\index{InputList@{InputList}!scandir@{scandir}}
+\index{scandir@{scandir}!InputList@{InputList}}
+\subsubsection[{scandir}]{\setlength{\rightskip}{0pt plus 5cm}void InputList::scandir ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_input_list_03015f736a0d4684e255f89f26d4590b}
+
+
+scans the directory for new measurements 
+
+fills empties the measlist and refiils it \hypertarget{class_input_list_5644d4b644bf4fb1849bfe89b68559ec}{
+\index{InputList@{InputList}!selectD@{selectD}}
+\index{selectD@{selectD}!InputList@{InputList}}
+\subsubsection[{selectD}]{\setlength{\rightskip}{0pt plus 5cm}void InputList::selectD ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_input_list_5644d4b644bf4fb1849bfe89b68559ec}
+
+
+Show directory selection dialog. 
+
+show dialog to selecte the current data directory scan the directory for data 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/inputlist.h\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/inputlist.cpp\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/release/moc\_\-inputlist.cpp\end{CompactItemize}

@@ -1,0 +1,394 @@
+<!DOCTYPE QtCreatorProject>
+<qtcreator>
+ <data>
+  <variable>ProjectExplorer.Project.ActiveTarget</variable>
+  <value type="int">0</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.EditorSettings</variable>
+  <valuemap type="QVariantMap">
+   <value key="EditorConfiguration.Codec" type="QByteArray">System</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Target.0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Desktop</value>
+   <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Target.DesktopTarget</value>
+   <value key="ProjectExplorer.Target.ActiveBuildConfiguration" type="int">1</value>
+   <value key="ProjectExplorer.Target.ActiveRunConfiguration" type="int">0</value>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.0" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStep.0" type="QVariantMap">
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+     <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStep.1" type="QVariantMap">
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+     <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+     <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+      <value type="QString">debug</value>
+     </valuelist>
+     <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepsCount" type="int">2</value>
+    <valuemap key="ProjectExplorer.BuildConfiguration.CleanStep.0" type="QVariantMap">
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+     <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+     <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList"/>
+     <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.CleanStepsCount" type="int">1</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Debug</value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">10</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">O:\RbCs\construction\codes\imgeval\imgeval-0.0.2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
+   </valuemap>
+   <valuemap key="ProjectExplorer.Target.BuildConfiguration.1" type="QVariantMap">
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStep.0" type="QVariantMap">
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">QtProjectManager.QMakeBuildStep</value>
+     <valuelist key="QtProjectManager.QMakeBuildStep.QMakeArguments" type="QVariantList"/>
+    </valuemap>
+    <valuemap key="ProjectExplorer.BuildConfiguration.BuildStep.1" type="QVariantMap">
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+     <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">false</value>
+     <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+      <value type="QString">release</value>
+     </valuelist>
+     <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.BuildStepsCount" type="int">2</value>
+    <valuemap key="ProjectExplorer.BuildConfiguration.CleanStep.0" type="QVariantMap">
+     <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString"></value>
+     <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.MakeStep</value>
+     <value key="Qt4ProjectManager.MakeStep.Clean" type="bool">true</value>
+     <valuelist key="Qt4ProjectManager.MakeStep.MakeArguments" type="QVariantList">
+      <value type="QString">clean</value>
+     </valuelist>
+     <value key="Qt4ProjectManager.MakeStep.MakeCommand" type="QString"></value>
+    </valuemap>
+    <value key="ProjectExplorer.BuildConfiguration.CleanStepsCount" type="int">1</value>
+    <value key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment" type="bool">false</value>
+    <valuelist key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">Release</value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4BuildConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration" type="int">8</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.BuildDirectory" type="QString">E:\RbCs\lab\iXon cam\imgeval\imgeval</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.QtVersionId" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.ToolChain" type="int">2</value>
+    <value key="Qt4ProjectManager.Qt4BuildConfiguration.UseShadowBuild" type="bool">true</value>
+   </valuemap>
+   <value key="ProjectExplorer.Target.BuildConfigurationCount" type="int">2</value>
+   <valuemap key="ProjectExplorer.Target.RunConfiguration.0" type="QVariantMap">
+    <value key="ProjectExplorer.ProjectConfiguration.DisplayName" type="QString">imgeval</value>
+    <value key="ProjectExplorer.ProjectConfiguration.Id" type="QString">Qt4ProjectManager.Qt4RunConfiguration</value>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.BaseEnvironmentBase" type="int">2</value>
+    <valuelist key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments" type="QVariantList"/>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.ProFile" type="QString">imgeval.pro</value>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix" type="bool">false</value>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.UseTerminal" type="bool">false</value>
+    <valuelist key="Qt4ProjectManager.Qt4RunConfiguration.UserEnvironmentChanges" type="QVariantList"/>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.UserSetName" type="bool">false</value>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.UserSetWorkingDirectory" type="bool">false</value>
+    <value key="Qt4ProjectManager.Qt4RunConfiguration.UserWorkingDirectory" type="QString"></value>
+   </valuemap>
+   <value key="ProjectExplorer.Target.RunConfigurationCount" type="int">1</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.TargetCount</variable>
+  <value type="int">1</value>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Updater.FileVersion</variable>
+  <value type="int">4</value>
+ </data>
+ <data>
+  <variable>buildconfiguration-Debug-cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">ALLUSERSPROFILE=D:\Documents and Settings\All Users</value>
+    <value type="QString">APPDATA=D:\Documents and Settings\fgb\Application Data</value>
+    <value type="QString">CLIENTNAME=Console</value>
+    <value type="QString">COMMONPROGRAMFILES=D:\Program Files\Common Files</value>
+    <value type="QString">COMPUTERNAME=PC133-C704</value>
+    <value type="QString">COMSPEC=D:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString">FP_NO_HOST_CHECK=NO</value>
+    <value type="QString">HOMEDRIVE=D:</value>
+    <value type="QString">HOMEPATH=\Documents and Settings\fgb</value>
+    <value type="QString">INCLUDE=D:\Program Files\Microsoft SDKs\Windows\v6.0A\Include;C:\OpenSSL\include;D:\Program Files\MATLAB\R2008a\extern\include</value>
+    <value type="QString">KMP_DUPLICATE_LIB_OK=TRUE</value>
+    <value type="QString">LIB=D:\Program Files\Microsoft SDKs\Windows\v6.0A\Lib;C:\OpenSSL\lib\VC\static;C:\OpenSSL\lib</value>
+    <value type="QString">LOGONSERVER=\\PC133-C704</value>
+    <value type="QString">MKL_SERIAL=YES</value>
+    <value type="QString">NIDAQMXSWITCHDIR=D:\Program Files\National Instruments\NI-DAQ\Switch\</value>
+    <value type="QString">NIIVIPATH=D:\Program Files\IVI Foundation\IVI\</value>
+    <value type="QString">NUMBER_OF_PROCESSORS=2</value>
+    <value type="QString">OPENSSL_CONF=C:\OpenSSL\bin\openssl.cfg</value>
+    <value type="QString">OS=Windows_NT</value>
+    <value type="QString">PATH=c:\Qt\2009.01\mingw\bin;c:\Qt\2009.01\qt\bin;D:\WINDOWS\system32;D:\WINDOWS;D:\WINDOWS\System32\Wbem;D:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\MATLAB\R2008a\bin;D:\Program Files\MATLAB\R2008a\bin\win32;D:\Program Files\IVI Foundation\IVI\bin;D:\Program Files\IVI Foundation\VISA\WinNT\Bin\;D:\PROGRA~1\IVIFOU~1\VISA\WinNT\Bin;D:\Program Files\IVI Foundation\VISA\WinNT\Bin;D:\VXIPNP\WINNT\BIN;D:\VXIPNP\WINNT\TekVISA\BIN;D:\Program Files\Microsoft SQL Server\90\Tools\binn\;D:\Program Files\CMake 2.6\bin;D:\Program Files\Microsoft SDKs\Windows\v6.0A\bin;C:\msysgit\msysgit\bin;C:\OpenSSL\bin</value>
+    <value type="QString">PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH</value>
+    <value type="QString">PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString">PROCESSOR_IDENTIFIER=x86 Family 15 Model 107 Stepping 2, AuthenticAMD</value>
+    <value type="QString">PROCESSOR_LEVEL=15</value>
+    <value type="QString">PROCESSOR_REVISION=6b02</value>
+    <value type="QString">PROGRAMFILES=D:\Program Files</value>
+    <value type="QString">QTDIR=c:/Qt/2009.01/qt</value>
+    <value type="QString">SESSIONNAME=Console</value>
+    <value type="QString">SYSTEMDRIVE=D:</value>
+    <value type="QString">SYSTEMROOT=D:\WINDOWS</value>
+    <value type="QString">TEMP=D:\DOCUME~1\fgb\LOCALS~1\Temp</value>
+    <value type="QString">TMP=D:\DOCUME~1\fgb\LOCALS~1\Temp</value>
+    <value type="QString">USERDOMAIN=PC133-C704</value>
+    <value type="QString">USERNAME=fgb</value>
+    <value type="QString">USERPROFILE=D:\Documents and Settings\fgb</value>
+    <value type="QString">VS90COMNTOOLS=O:\Program Files\Microsoft Visual Studio 9.0\Common7\Tools\</value>
+    <value type="QString">VXIPNPPATH=D:\Program Files\IVI Foundation\VISA\</value>
+    <value type="QString">WINDIR=D:\WINDOWS</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">clean</value>
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">C:/Qt/2009.01/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">O:/RbCs/construction/codes/imgeval/imgeval-0.0.2</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">ALLUSERSPROFILE=D:\Documents and Settings\All Users</value>
+    <value type="QString">ALTIUMPATH=D:\Program Files\Altium Designer Winter 09\System;D:\Program Files\Altium Designer Summer 09\System</value>
+    <value type="QString">APPDATA=D:\Documents and Settings\k\Application Data</value>
+    <value type="QString">AVR32_HOME=D:\WinAVR-20100110</value>
+    <value type="QString">CARBON_MEM_DISABLE=1</value>
+    <value type="QString">CLIENTNAME=Console</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPLOCALE=de_DE</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPNAME=AdobeDrive</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPVERSION=1.0.0</value>
+    <value type="QString">COMMONPROGRAMFILES=D:\Program Files\Common Files</value>
+    <value type="QString">COMPUTERNAME=RBCS-ELECTRONIC</value>
+    <value type="QString">COMSPEC=D:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString">FP_NO_HOST_CHECK=NO</value>
+    <value type="QString">HOMEDRIVE=D:</value>
+    <value type="QString">HOMEPATH=\Documents and Settings\k</value>
+    <value type="QString">IVIROOTDIR32=D:\Program Files\IVI Foundation\IVI\</value>
+    <value type="QString">KMP_DUPLICATE_LIB_OK=TRUE</value>
+    <value type="QString">LOGONSERVER=\\RBCS-ELECTRONIC</value>
+    <value type="QString">MKL_SERIAL=YES</value>
+    <value type="QString">MOZ_PLUGIN_PATH=D:\Program Files\Tracker Software\PDF Viewer\</value>
+    <value type="QString">NUMBER_OF_PROCESSORS=4</value>
+    <value type="QString">OS=Windows_NT</value>
+    <value type="QString">PATH=F:\Qt\2010.02.1\mingw\bin;F:\Qt\2010.02.1\qt\bin;D:\Program Files\NVIDIA Corporation\PhysX\Common;F:\Program Files\MiKTeX 2.9\miktex/bin;D:\WinAVR-20100110\bin;D:\WinAVR-20100110\utils\bin;D:\WINDOWS\system32;D:\WINDOWS;D:\WINDOWS\System32\Wbem;D:\Program Files\MATLAB\R2009a\bin;D:\Program Files\MATLAB\R2009a\bin\win32;D:\Program Files\SlikSvn\bin\;D:\Program Files\Altium Designer Winter 09\System;D:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\Altium Designer Summer 09\System;C:\VXIPNP\WINNT\BIN;C:\VXIPNP\WINNT\TekVISA\BIN;D:\Program Files\doxygen\bin;D:\WINDOWS\system32\WindowsPowerShell\v1.0;D:\Program Files\Agilent\IO Libraries Suite\bin;D:\Program Files\IVI Foundation\VISA\WinNT\agvisa;D:\Program Files\IVI Foundation\IVI\bin;D:\Program Files\IVI Foundation\VISA\WinNT\Bin\;D:\VXIPNP\WINNT\BIN;D:\VXIPNP\WINNT\TekVISA\BIN;D:\Program Files\Atmel\Flip 3.4.1\bin</value>
+    <value type="QString">PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.PSC1</value>
+    <value type="QString">PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString">PROCESSOR_IDENTIFIER=x86 Family 16 Model 4 Stepping 3, AuthenticAMD</value>
+    <value type="QString">PROCESSOR_LEVEL=16</value>
+    <value type="QString">PROCESSOR_REVISION=0403</value>
+    <value type="QString">PROGRAMFILES=D:\Program Files</value>
+    <value type="QString">QTDIR=F:/Qt/2010.02.1/qt</value>
+    <value type="QString">SESSIONNAME=Console</value>
+    <value type="QString">SYSTEMDRIVE=D:</value>
+    <value type="QString">SYSTEMROOT=D:\WINDOWS</value>
+    <value type="QString">TEMP=D:\DOCUME~1\k\LOCALS~1\Temp</value>
+    <value type="QString">TMP=D:\DOCUME~1\k\LOCALS~1\Temp</value>
+    <value type="QString">USERDOMAIN=RBCS-ELECTRONIC</value>
+    <value type="QString">USERNAME=k</value>
+    <value type="QString">USERPROFILE=D:\Documents and Settings\k</value>
+    <value type="QString">VXIPNPPATH=D:\Program Files\IVI Foundation\VISA\</value>
+    <value type="QString">WINDIR=D:\WINDOWS</value>
+   </valuelist>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">F:/imgeval_sandbox/imgeval/imgeval/imgeval.pro</value>
+    <value type="QString">-spec</value>
+    <value type="QString">win32-g++</value>
+    <value type="QString">-r</value>
+    <value type="QString">CONFIG+=debug_and_release</value>
+    <value type="QString">CONFIG+=release</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">f:/qt/2010.02.1/qt/bin/qmake.exe</value>
+   <value key="abstractProcess.enabled" type="bool">false</value>
+   <value key="abstractProcess.workingDirectory" type="QString">F:/imgeval_sandbox/imgeval/imgeval</value>
+   <value key="buildConfiguration" type=""></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">ALLUSERSPROFILE=D:\Documents and Settings\All Users</value>
+    <value type="QString">ALTIUMPATH=D:\Program Files\Altium Designer Winter 09\System;D:\Program Files\Altium Designer Summer 09\System</value>
+    <value type="QString">APPDATA=D:\Documents and Settings\k\Application Data</value>
+    <value type="QString">AVR32_HOME=D:\WinAVR-20100110</value>
+    <value type="QString">CARBON_MEM_DISABLE=1</value>
+    <value type="QString">CLIENTNAME=Console</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPLOCALE=de_DE</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPNAME=AdobeDrive</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPVERSION=1.0.0</value>
+    <value type="QString">COMMONPROGRAMFILES=D:\Program Files\Common Files</value>
+    <value type="QString">COMPUTERNAME=RBCS-ELECTRONIC</value>
+    <value type="QString">COMSPEC=D:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString">FP_NO_HOST_CHECK=NO</value>
+    <value type="QString">HOMEDRIVE=D:</value>
+    <value type="QString">HOMEPATH=\Documents and Settings\k</value>
+    <value type="QString">IVIROOTDIR32=D:\Program Files\IVI Foundation\IVI\</value>
+    <value type="QString">KMP_DUPLICATE_LIB_OK=TRUE</value>
+    <value type="QString">LOGONSERVER=\\RBCS-ELECTRONIC</value>
+    <value type="QString">MKL_SERIAL=YES</value>
+    <value type="QString">MOZ_PLUGIN_PATH=D:\Program Files\Tracker Software\PDF Viewer\</value>
+    <value type="QString">NUMBER_OF_PROCESSORS=4</value>
+    <value type="QString">OS=Windows_NT</value>
+    <value type="QString">PATH=F:\Qt\2010.02.1\mingw\bin;F:\Qt\2010.02.1\qt\bin;D:\Program Files\NVIDIA Corporation\PhysX\Common;F:\Program Files\MiKTeX 2.9\miktex/bin;D:\WinAVR-20100110\bin;D:\WinAVR-20100110\utils\bin;D:\WINDOWS\system32;D:\WINDOWS;D:\WINDOWS\System32\Wbem;D:\Program Files\MATLAB\R2009a\bin;D:\Program Files\MATLAB\R2009a\bin\win32;D:\Program Files\SlikSvn\bin\;D:\Program Files\Altium Designer Winter 09\System;D:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\Altium Designer Summer 09\System;C:\VXIPNP\WINNT\BIN;C:\VXIPNP\WINNT\TekVISA\BIN;D:\Program Files\doxygen\bin;D:\WINDOWS\system32\WindowsPowerShell\v1.0;D:\Program Files\Agilent\IO Libraries Suite\bin;D:\Program Files\IVI Foundation\VISA\WinNT\agvisa;D:\Program Files\IVI Foundation\IVI\bin;D:\Program Files\IVI Foundation\VISA\WinNT\Bin\;D:\VXIPNP\WINNT\BIN;D:\VXIPNP\WINNT\TekVISA\BIN;D:\Program Files\Atmel\Flip 3.4.1\bin</value>
+    <value type="QString">PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.PSC1</value>
+    <value type="QString">PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString">PROCESSOR_IDENTIFIER=x86 Family 16 Model 4 Stepping 3, AuthenticAMD</value>
+    <value type="QString">PROCESSOR_LEVEL=16</value>
+    <value type="QString">PROCESSOR_REVISION=0403</value>
+    <value type="QString">PROGRAMFILES=D:\Program Files</value>
+    <value type="QString">QTDIR=F:/Qt/2010.02.1/qt</value>
+    <value type="QString">SESSIONNAME=Console</value>
+    <value type="QString">SYSTEMDRIVE=D:</value>
+    <value type="QString">SYSTEMROOT=D:\WINDOWS</value>
+    <value type="QString">TEMP=D:\DOCUME~1\k\LOCALS~1\Temp</value>
+    <value type="QString">TMP=D:\DOCUME~1\k\LOCALS~1\Temp</value>
+    <value type="QString">USERDOMAIN=RBCS-ELECTRONIC</value>
+    <value type="QString">USERNAME=k</value>
+    <value type="QString">USERPROFILE=D:\Documents and Settings\k</value>
+    <value type="QString">VXIPNPPATH=D:\Program Files\IVI Foundation\VISA\</value>
+    <value type="QString">WINDIR=D:\WINDOWS</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">release</value>
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">F:/Qt/2010.02.1/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">F:/imgeval_sandbox/imgeval/imgeval</value>
+   <valuelist key="makeargs" type="QVariantList">
+    <value type="QString">release</value>
+   </valuelist>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfiguration-Release-cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Release</value>
+   <valuelist key="abstractProcess.Environment" type="QVariantList">
+    <value type="QString">ALLUSERSPROFILE=D:\Documents and Settings\All Users</value>
+    <value type="QString">ALTIUMPATH=D:\Program Files\Altium Designer Winter 09\System;D:\Program Files\Altium Designer Summer 09\System</value>
+    <value type="QString">APPDATA=D:\Documents and Settings\k\Application Data</value>
+    <value type="QString">AVR32_HOME=D:\WinAVR-20100110</value>
+    <value type="QString">CARBON_MEM_DISABLE=1</value>
+    <value type="QString">CLIENTNAME=Console</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPLOCALE=de_DE</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPNAME=AdobeDrive</value>
+    <value type="QString">COM.ADOBE.VERSIONCUE.CLIENT.APPVERSION=1.0.0</value>
+    <value type="QString">COMMONPROGRAMFILES=D:\Program Files\Common Files</value>
+    <value type="QString">COMPUTERNAME=RBCS-ELECTRONIC</value>
+    <value type="QString">COMSPEC=D:\WINDOWS\system32\cmd.exe</value>
+    <value type="QString">FP_NO_HOST_CHECK=NO</value>
+    <value type="QString">HOMEDRIVE=D:</value>
+    <value type="QString">HOMEPATH=\Documents and Settings\k</value>
+    <value type="QString">IVIROOTDIR32=D:\Program Files\IVI Foundation\IVI\</value>
+    <value type="QString">KMP_DUPLICATE_LIB_OK=TRUE</value>
+    <value type="QString">LOGONSERVER=\\RBCS-ELECTRONIC</value>
+    <value type="QString">MKL_SERIAL=YES</value>
+    <value type="QString">NUMBER_OF_PROCESSORS=4</value>
+    <value type="QString">OS=Windows_NT</value>
+    <value type="QString">PATH=F:\Qt\2010.02.1\mingw\bin;F:\Qt\2010.02.1\qt\bin;F:\Program Files\MiKTeX 2.9\miktex/bin;D:\WinAVR-20100110\bin;D:\WinAVR-20100110\utils\bin;D:\WINDOWS\system32;D:\WINDOWS;D:\WINDOWS\System32\Wbem;D:\Program Files\MATLAB\R2009a\bin;D:\Program Files\MATLAB\R2009a\bin\win32;D:\Program Files\SlikSvn\bin\;D:\Program Files\Altium Designer Winter 09\System;D:\Program Files\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\Altium Designer Summer 09\System;C:\VXIPNP\WINNT\BIN;C:\VXIPNP\WINNT\TekVISA\BIN;D:\Program Files\doxygen\bin;D:\WINDOWS\system32\WindowsPowerShell\v1.0;D:\Program Files\Agilent\IO Libraries Suite\bin;D:\Program Files\IVI Foundation\VISA\WinNT\agvisa;D:\Program Files\IVI Foundation\IVI\bin;D:\Program Files\IVI Foundation\VISA\WinNT\Bin\;D:\Program Files\Atmel\Flip 3.4.1\bin</value>
+    <value type="QString">PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.PSC1</value>
+    <value type="QString">PROCESSOR_ARCHITECTURE=x86</value>
+    <value type="QString">PROCESSOR_IDENTIFIER=x86 Family 16 Model 4 Stepping 3, AuthenticAMD</value>
+    <value type="QString">PROCESSOR_LEVEL=16</value>
+    <value type="QString">PROCESSOR_REVISION=0403</value>
+    <value type="QString">PROGRAMFILES=D:\Program Files</value>
+    <value type="QString">QTDIR=F:/Qt/2010.02.1/qt</value>
+    <value type="QString">SESSIONNAME=Console</value>
+    <value type="QString">SYSTEMDRIVE=D:</value>
+    <value type="QString">SYSTEMROOT=D:\WINDOWS</value>
+    <value type="QString">TEMP=D:\DOCUME~1\k\LOCALS~1\Temp</value>
+    <value type="QString">TMP=D:\DOCUME~1\k\LOCALS~1\Temp</value>
+    <value type="QString">USERDOMAIN=RBCS-ELECTRONIC</value>
+    <value type="QString">USERNAME=k</value>
+    <value type="QString">USERPROFILE=D:\Documents and Settings\k</value>
+    <value type="QString">VXIPNPPATH=D:\Program Files\IVI Foundation\VISA\</value>
+    <value type="QString">WINDIR=D:\WINDOWS</value>
+   </valuelist>
+   <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>
+   <valuelist key="abstractProcess.arguments" type="QVariantList">
+    <value type="QString">clean</value>
+    <value type="QString">-w</value>
+   </valuelist>
+   <value key="abstractProcess.command" type="QString">F:/Qt/2010.02.1/mingw/bin/mingw32-make.exe</value>
+   <value key="abstractProcess.enabled" type="bool">true</value>
+   <value key="abstractProcess.workingDirectory" type="QString">F:/imgeval_sandbox/imgeval/imgeval</value>
+   <value key="cleanConfig" type="bool">true</value>
+   <valuelist key="makeargs" type="QVariantList">
+    <value type="QString">clean</value>
+   </valuelist>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildconfigurations</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">Debug</value>
+   <value type="QString">Release</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>buildstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+   <value key="mkspec" type="QString"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildstep1</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>buildsteps</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">trolltech.qt4projectmanager.qmake</value>
+   <value type="QString">trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>cleanstep0</variable>
+  <valuemap type="QVariantMap">
+   <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString"></value>
+   <value key="clean" type="bool">true</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>cleansteps</variable>
+  <valuelist type="QVariantList">
+   <value type="QString">trolltech.qt4projectmanager.make</value>
+  </valuelist>
+ </data>
+ <data>
+  <variable>defaultFileEncoding</variable>
+  <value type="QByteArray">System</value>
+ </data>
+ <data>
+  <variable>project</variable>
+  <valuemap type="QVariantMap"/>
+ </data>
+</qtcreator>

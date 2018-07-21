@@ -1,0 +1,260 @@
+#include <QtGui>
+#include<vector>
+#include<fstream>
+#include<QUdpSocket>
+#include"inputlistthread.h"
+#include "inputlist.h"
+#include "datastructure/dataset.h"
+#include "datastructure/numeric_templates.h"
+#include "loadtostack.h"
+#include"errorpatterngui.h"
+using namespace std;
+
+
+
+/************************** CONSTRUCTORS ***************************************/
+InputList::InputList(Dataset* settings,MainWindow* mainapp, QWidget* parent)
+    :QWidget(parent)
+{
+    this->mainapp = mainapp;
+    ofstream slog("inputlist.log");
+    slog<<"inputlist"<<endl<<flush;
+    scan_finished=true;
+
+    this->settings = settings;
+
+    QGridLayout* lay = new QGridLayout;
+    //Buttons etc. for the Data Directory part
+    dir = new QDir(settings->get("RawdataDir").s.c_str());
+    if(!dir->isReadable()) *dir=QDir::currentPath();
+    settings->store("RawdataDir",dir->path().toStdString());
+    QVBoxLayout* dirlay = new QVBoxLayout;
+    QHBoxLayout* hlay= new QHBoxLayout;
+    ddir = new QLineEdit(settings->get("RawdataDir").s.c_str(),this);
+    ddir->setReadOnly(true);
+    hlay->addWidget(ddir);
+    QPushButton* edit= new QPushButton("...",this);
+    hlay->addWidget(edit);
+    dirlay->addLayout(hlay);
+    connect(edit,SIGNAL(clicked()),this, SLOT(selectD()));
+    lay->addLayout(dirlay,0,0);
+
+    //Button etc. for the Measurement Part
+    QHBoxLayout* laynr=new QHBoxLayout;
+    QLabel* mnrlabel = new QLabel(tr("Messnr.:"),this);
+    laynr->addWidget(mnrlabel);
+    measlist = new QComboBox(this);
+    laynr->addWidget(measlist);
+    calcnew = new QPushButton(tr("autoupdate"),this);
+    calcnew->setCheckable(true);
+    calcnew->setChecked(settings->get("autoupdate_checked",(int) 1).i);
+    connect(calcnew,SIGNAL(clicked(bool)),this,SLOT(autoupdate_triggered(bool)));
+    laynr->addWidget(calcnew);
+    QPushButton* reload = new QPushButton(tr("reload"),this);
+    laynr->addWidget(reload);
+    QPushButton* loadstack = new QPushButton(tr("file to stack"),this);
+    laynr->addWidget(loadstack);
+    l = new QLabel();
+    laynr->addWidget(l);
+    lay->addLayout(laynr,1,0);
+    setLayout(lay);
+
+    //INIT
+    slog<<"thread"<<endl<<flush;
+
+    thread = new InputListThread(settings,*dir);
+    slog<<"scandir"<<endl<<flush;
+    scandir();
+    connect(measlist,SIGNAL(currentIndexChanged(const QString &)),
+            this,SLOT(measnrChanged(const QString& )));
+
+    connect(thread, SIGNAL(newDataFound(QString)),this,SLOT(insertNewData(QString)));
+    connect(thread, SIGNAL(dirmodified(QString)),this,SLOT(dirmodified(QString)));
+    connect(reload,SIGNAL(clicked()),this,SLOT(ReloadData()));
+    connect(loadstack,SIGNAL(clicked()),this,SLOT(loadtostack()));
+    slog.close();
+    initUdpSocket();
+    createActions();
+}
+
+//! constructor for the context menu actions
+void InputList::createActions()
+{
+    takebackgroundAct = new QAction(tr("&take as &Background"), this);
+    takebackgroundAct->setCheckable(true);
+    takebackgroundAct->setStatusTip(tr("take this picture as one of the Background pictures"));
+    connect(takebackgroundAct, SIGNAL(toggled(bool)),
+            (QWidget*)mainapp, SLOT(addToBackground(bool)));
+    clearbackgroundAct = new QAction(tr("&clear &backgrounds"), this);
+    clearbackgroundAct->setStatusTip(tr("clears the set of backgrounds"));
+    connect(clearbackgroundAct, SIGNAL(triggered()),
+            (QWidget*)mainapp, SLOT(clearBackground()));
+    addErrorPatternsAct = new QAction(tr("Add error &Patterns"),this);
+    connect(addErrorPatternsAct,SIGNAL(triggered()),this, SLOT(addErrorpatterns()));
+}
+
+//! Destructor (called after main class and settings is already destroyed
+InputList::~InputList()
+{
+}
+
+/************************* EVENT HANDLERS ******************************/
+//! creates the context menu
+/*! creates the context menu
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::contextMenuEvent(QContextMenuEvent* event)
+{
+    QMenu menu(this);
+    menu.addAction(takebackgroundAct);
+    menu.addAction(clearbackgroundAct);
+    menu.addAction(addErrorPatternsAct);
+    menu.exec(event->globalPos());
+}
+
+//!empties the measlist and refills it
+void InputList::scandir()
+{
+    measlist->clear();
+    measlist->addItems(thread->getMeasList());
+}
+
+
+
+/*!
+
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::addErrorpatterns()
+{
+   ErrorPatternGui* ep = new ErrorPatternGui(settings,mainapp);
+   ep->show();
+
+}
+
+/*!
+  called if new data is found (by input list thread)
+  inserts the data into the list and selects it if the appropriate button is checked
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::insertNewData(QString newdata){
+    measlist->addItem(newdata);
+    if(calcnew->isChecked()) measlist->setCurrentIndex(measlist->count()-1);
+    l->setText(newdata);
+}
+
+//! for debugging thins only
+void InputList::dirmodified(QString dd)
+{
+    l->setText(dd);
+}
+
+void InputList::ReloadData()
+{
+    emit measSelected(dir->path()+"/"+current_meas);
+}
+
+
+/*! called if different dataset is selected
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::measnrChanged(const QString meas)
+{
+    if(!meas.isEmpty()){
+        current_meas=meas;
+        emit measSelected(dir->path()+"/"+meas);
+
+    }
+}
+
+/*! show dialog to selecte the current data directory
+scan the directory for data
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::selectD()
+{
+    *dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                             dir->path(),
+                                             QFileDialog::ShowDirsOnly
+                                             | QFileDialog::DontResolveSymlinks);
+    ddir->setText(dir->path());
+    thread->setDir(*dir);
+    settings->store("RawdataDir",dir->path().toStdString());
+    scandir();
+}
+
+//! Initialization of the UDP Socket
+/*! binds the event handler readUdpDatagram() to the IP (of this computer) and port
+  specified in the settings
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::initUdpSocket()
+{
+    udp= new QUdpSocket(this);
+    if(!(udp->bind(settings->get("UDP_port",(int) 703).i))){
+        QMessageBox::warning(this,tr("UDP error"),
+                             tr("could not connect to the selected UDP port. Probably another application is using it"));
+    }
+    connect(udp, SIGNAL(readyRead()),this, SLOT(readUdpDatagram()));
+    readUdpDatagram(); //read pending datagrams
+}
+
+
+//! called automatically whenever new UDP data is available in order to read it
+/*! Attention this function is only called when you processed the old data and the buffer is empty
+  so always use the while circuit to empty the buffer
+  Extracts the number of the measurement from the UDP string and adds it to the thread evaluation list
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::readUdpDatagram()
+{
+
+    while (udp->hasPendingDatagrams()) {
+        QByteArray data;
+        data.resize(udp->pendingDatagramSize());
+        QHostAddress sender;
+        quint16 senderPort;
+        udp->readDatagram(data.data(), data.size(),
+                          &sender, &senderPort);
+        string s = data.data();
+        if(s.rfind("\\",15) != string::npos)    /*if \ found (you have to escape \ thats why its \\) */
+            thread->addUdp(s.substr(s.rfind("\\")+1,4));
+        if(s.rfind("Rbdetuning") != string::npos)   {
+            std::string dnums = s.substr(s.rfind("Rbdetuning")+10,4);
+            double dnum = ::atof(dnums.c_str());
+            settings->store("Rbdetuning",dnum,'d');
+        }
+        if(s.rfind("Csdetuning") != string::npos)   {
+            std::string dnums = s.substr(s.rfind("Csdetuning")+10,4);
+            double dnum = ::atof(dnums.c_str());
+            settings->store("Csdetuning",dnum,'d');
+        }
+    }
+}
+
+/*!  used to store the state of the autoupdate button in the settings variable
+\param checked tells wheter the autoupdate button was checked or not
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::autoupdate_triggered(bool checked)
+{
+    settings->store("autoupdate_checked",checked);
+}
+/*!  used to load an image from a file into the imagestack
+\param checked tells wheter the autoupdate button was checked or not
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void InputList::loadtostack()
+{
+    LoadToStack* lstack = new LoadToStack(settings,mainapp);
+    lstack->show();
+}

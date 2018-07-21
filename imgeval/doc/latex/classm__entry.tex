@@ -1,0 +1,275 @@
+\hypertarget{classm__entry}{
+\section{m\_\-entry Class Reference}
+\label{classm__entry}\index{m\_\-entry@{m\_\-entry}}
+}
+
+
+provides different types of data  
+
+
+
+
+{\ttfamily \#include $<$dataset.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classm__entry_aad6b7f6dc2b1dd165b156bac45c61f50}{m\_\-entry} ()
+\begin{DoxyCompactList}\small\item\em constructor of entry class sets s='' and d=0 \item\end{DoxyCompactList}\item 
+void \hyperlink{classm__entry_a725f4e337865c5a9fb4b4fa538c6bf90}{set} (const string \&s, char category='d')
+\begin{DoxyCompactList}\small\item\em sets the stringvalue of this entry \item\end{DoxyCompactList}\item 
+void \hyperlink{classm__entry_aaf31e825af3be2a5f8b0c1abc6757736}{set} (const double \&d, char category='d')
+\item 
+void \hyperlink{classm__entry_a50447dab5f76fc1ddb40609a3a2a0c73}{set} (const int \&i, char category='d')
+\item 
+void \hyperlink{classm__entry_a2545fc16f8cf91acc39290812df4d0aa}{set} (const vector$<$ double $>$ \&vd, char category='d')
+\item 
+void \hyperlink{classm__entry_a35cde3937959533225344c01b31f77cc}{set} (const vector$<$ string $>$ \&vs, char category='d')
+\item 
+void \hyperlink{classm__entry_ab749a4ab6b82dbc81f28e95a377d9136}{setStr} (string str, char category='d')
+\item 
+string \hyperlink{classm__entry_aa00e8fb80d7f80d02756570613f3362f}{str} ()
+\begin{DoxyCompactList}\small\item\em displays the values of the entry as string \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classm__entry_a3303f3002f302fedf38d17f2a00bd1c7}{
+string {\bfseries s}}
+\label{classm__entry_a3303f3002f302fedf38d17f2a00bd1c7}
+
+\item 
+\hypertarget{classm__entry_a455d38c5314b16576297baf448e315de}{
+double {\bfseries d}}
+\label{classm__entry_a455d38c5314b16576297baf448e315de}
+
+\item 
+\hypertarget{classm__entry_a82360b8f3ff1a2af271c7a04f5843cc6}{
+int {\bfseries i}}
+\label{classm__entry_a82360b8f3ff1a2af271c7a04f5843cc6}
+
+\item 
+\hypertarget{classm__entry_ab7bf71129d720abd62d813cce213d819}{
+vector$<$ double $>$ {\bfseries vd}}
+\label{classm__entry_ab7bf71129d720abd62d813cce213d819}
+
+\item 
+\hypertarget{classm__entry_a5a6e6ebadcfd29baebcbfc9e02fb9ec8}{
+vector$<$ string $>$ {\bfseries vs}}
+\label{classm__entry_a5a6e6ebadcfd29baebcbfc9e02fb9ec8}
+
+\item 
+\hypertarget{classm__entry_a61ffd6d35941c4938a21af5ba61c544a}{
+char {\bfseries type}}
+\label{classm__entry_a61ffd6d35941c4938a21af5ba61c544a}
+
+\item 
+\hypertarget{classm__entry_a24d6e1fa3b9a369ba70d7065000b9362}{
+char {\bfseries category}}
+\label{classm__entry_a24d6e1fa3b9a369ba70d7065000b9362}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+provides different types of data wrapper class to store different types of data a value should be set via the set functions. currently strings double and vector$<$double$>$ are supported. The data can ba accessed directly. (I know bad style but this is a small class and .d is shorter than .d() ) 
+
+Definition at line 22 of file dataset.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classm__entry_aad6b7f6dc2b1dd165b156bac45c61f50}{
+\index{m\_\-entry@{m\_\-entry}!m\_\-entry@{m\_\-entry}}
+\index{m\_\-entry@{m\_\-entry}!m_entry@{m\_\-entry}}
+\subsubsection[{m\_\-entry}]{\setlength{\rightskip}{0pt plus 5cm}m\_\-entry::m\_\-entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_aad6b7f6dc2b1dd165b156bac45c61f50}
+
+
+constructor of entry class sets s='' and d=0 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$
+
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 267 of file dataset.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classm__entry_a725f4e337865c5a9fb4b4fa538c6bf90}{
+\index{m\_\-entry@{m\_\-entry}!set@{set}}
+\index{set@{set}!m_entry@{m\_\-entry}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void m\_\-entry::set (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{ s, }
+\item[{char}]{ c = {\ttfamily 'd'}}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_a725f4e337865c5a9fb4b4fa538c6bf90}
+
+
+sets the stringvalue of this entry 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em s} & value to be set \\
+\hline
+{\em c} & categorie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 279 of file dataset.cpp.
+
+\hypertarget{classm__entry_aaf31e825af3be2a5f8b0c1abc6757736}{
+\index{m\_\-entry@{m\_\-entry}!set@{set}}
+\index{set@{set}!m_entry@{m\_\-entry}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void m\_\-entry::set (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{ d, }
+\item[{char}]{ c = {\ttfamily 'd'}}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_aaf31e825af3be2a5f8b0c1abc6757736}
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 290 of file dataset.cpp.
+
+\hypertarget{classm__entry_a2545fc16f8cf91acc39290812df4d0aa}{
+\index{m\_\-entry@{m\_\-entry}!set@{set}}
+\index{set@{set}!m_entry@{m\_\-entry}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void m\_\-entry::set (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ double $>$ \&}]{ vd, }
+\item[{char}]{ c = {\ttfamily 'd'}}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_a2545fc16f8cf91acc39290812df4d0aa}
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 314 of file dataset.cpp.
+
+\hypertarget{classm__entry_a35cde3937959533225344c01b31f77cc}{
+\index{m\_\-entry@{m\_\-entry}!set@{set}}
+\index{set@{set}!m_entry@{m\_\-entry}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void m\_\-entry::set (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ string $>$ \&}]{ vs, }
+\item[{char}]{ c = {\ttfamily 'd'}}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_a35cde3937959533225344c01b31f77cc}
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 325 of file dataset.cpp.
+
+\hypertarget{classm__entry_a50447dab5f76fc1ddb40609a3a2a0c73}{
+\index{m\_\-entry@{m\_\-entry}!set@{set}}
+\index{set@{set}!m_entry@{m\_\-entry}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void m\_\-entry::set (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{ i, }
+\item[{char}]{ c = {\ttfamily 'd'}}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_a50447dab5f76fc1ddb40609a3a2a0c73}
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 302 of file dataset.cpp.
+
+\hypertarget{classm__entry_ab749a4ab6b82dbc81f28e95a377d9136}{
+\index{m\_\-entry@{m\_\-entry}!setStr@{setStr}}
+\index{setStr@{setStr}!m_entry@{m\_\-entry}}
+\subsubsection[{setStr}]{\setlength{\rightskip}{0pt plus 5cm}void m\_\-entry::setStr (
+\begin{DoxyParamCaption}
+\item[{string}]{ str, }
+\item[{char}]{ c = {\ttfamily 'd'}}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_ab749a4ab6b82dbc81f28e95a377d9136}
+converts the string to the datatype stored perviously in this entry and stores it 
+\begin{DoxyParams}{Parameters}
+{\em string} & value to be set \\
+\hline
+{\em c} & category \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 339 of file dataset.cpp.
+
+\hypertarget{classm__entry_aa00e8fb80d7f80d02756570613f3362f}{
+\index{m\_\-entry@{m\_\-entry}!str@{str}}
+\index{str@{str}!m_entry@{m\_\-entry}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}string m\_\-entry::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classm__entry_aa00e8fb80d7f80d02756570613f3362f}
+
+
+displays the values of the entry as string 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ returns a string corresponding to the current value \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 392 of file dataset.cpp.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/datastructure/dataset.h\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/datastructure/dataset.cpp\end{DoxyCompactItemize}

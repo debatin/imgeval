@@ -1,0 +1,209 @@
+#include "settingsquick.h"
+#include <QtGui>
+#include "settingscontrol.h"
+#include "datastructure/dataset.h"
+//#include "filesavebox.h"
+#include <iostream>
+using namespace std;
+
+
+QuicklistEntry::QuicklistEntry(Dataset* values,string name, string listname,
+                               Dataset* settings, QWidget* parent)
+        :baseclass(settings) ,QWidget(parent)
+{
+this->listname = listname;
+    this->values=values;
+    this->name= name;
+    QHBoxLayout* lay = new QHBoxLayout();
+    lay->setSpacing(0);
+    lay->setContentsMargins(2,0,2,0);
+    label = new QLabel(name.c_str());
+    lay->addWidget(label);
+    edit = new QLineEdit(values->get(name).str().c_str());
+    edit->setAutoFillBackground(false);
+    edit->setFrame(false);
+    connect(edit,SIGNAL(editingFinished()),this,SLOT(entryChanged()));
+    lay->addWidget(edit);
+    setLayout(lay);
+}
+
+
+/*! called if the size of the list changes
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void QuicklistEntry::resizeEvent ( QResizeEvent * event )
+{
+double f = get(listname+"editfontsize",12).d;
+edit->setFont(QFont("Arial",f,QFont::Bold));
+ f = get(listname+"labelfontsize",12).d;
+label->setFont(QFont("Arial",f,QFont::Normal));
+}
+
+
+void QuicklistEntry::entryChanged()
+{
+    values->storeStr(name,edit->text().toStdString());
+}
+
+/*!   constructor of the quicklist
+  The quicklist is used to display an quickly change parameters
+\param settings values to be edited and shown (may also be the settings
+\param name name of this instance
+\param settingsg the general settings
+\param
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+Settingsquick::Settingsquick(Dataset* values, string name, Dataset* settingsq, QWidget* parent)
+  :QWidget(parent)
+{
+settings= settingsq;
+     this->name = name;
+    this->values=values;
+ init();
+
+}
+
+Settingsquick::Settingsquick(Dataset* setting, QWidget* parent)
+  :QWidget(parent)
+{
+values = setting;
+settings= setting;
+name="setting";
+init();
+}
+
+/*! initialises the GUI and layout of the quicklist
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::init()
+{
+     this->setBackgroundRole(QPalette::Window);
+    QPalette pal(this->palette());
+  pal.setColor(QPalette::Text,QColor(0,70,0));
+  pal.setColor(QPalette::Button,QColor(0,70,0));
+  pal.setColor(QPalette::Window,QColor(255,255,255));
+  pal.setColor(QPalette::Base,QColor(255,255,255));
+  pal.setColor(QPalette::ButtonText,QColor(255,255,0));
+  pal.setColor(QPalette::WindowText,QColor(0,0,55));
+  this->setPalette(pal);
+this->setAutoFillBackground(true);
+  createActions();
+  lay = new QVBoxLayout();
+  lay->setSpacing(0);
+  lay->setContentsMargins(0,0,0,0);
+ setLayout(lay);
+updateList();
+}
+
+/*! display the settings window
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::displaySettings()
+{
+    Settingscontrol * set = new Settingscontrol(values,name);
+    connect(set,SIGNAL(changed()),this,SLOT(updateList()));
+    set->show();
+}
+
+/*! saves the current settings to a file
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::saveSettings()
+{
+  QString dir;
+  dir = QFileDialog::getSaveFileName(this, tr("Open Directory"),
+                                           "",
+                                    tr("settingsfiles (*.uset)"));
+  values->toFile(dir.toStdString().c_str());
+}
+
+/*! load settings from a file
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::loadSettings()
+{
+  QString dir;
+  dir = QFileDialog::getOpenFileName(this, tr("Open Directory"),
+                                           "",
+                                    tr("settingsfiles (*.uset)"));
+  values->fromFile(dir.toStdString().c_str());
+
+}
+
+/*! clears the quicklist
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::clearList()
+{
+vector<string> entries;
+values->store(name+"_quicklist",entries);
+updateList();
+}
+
+
+/*! updates the quicklist
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::updateList()
+{
+  //clear the layout
+    QVBoxLayout* lay1 = (QVBoxLayout*) layout();
+    QLayoutItem *child;
+    while ((child = lay1->takeAt(0)) != 0) {
+        QWidget* w = child->widget();
+        w->hide();
+        w->deleteLater();
+        delete child;
+    }
+    //refill
+    vector<string> entries = values->get(name+"_quicklist").vs;
+    for(int i = 0; i< entries.size();i++){
+        lay1->addWidget(new QuicklistEntry(values,entries[i],name,settings));
+    }
+    setUpdatesEnabled(true);
+    update();
+lay1->update();
+setLayout(lay1);
+}
+
+/*! creates the context menu
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::contextMenuEvent(QContextMenuEvent *event)
+ {
+     QMenu menu(this);
+     menu.addAction(showSettingsAct);
+     menu.addAction(clearQuickAct);
+     menu.addAction(saveSettingsAct);
+     menu.addAction(loadSettingsAct);
+     menu.exec(event->globalPos());
+}
+
+/*!
+\author Markus Debatin
+\date 10-2010
+*************************************************************************/
+void Settingsquick::createActions()
+{
+    showSettingsAct = new QAction(tr("&Show Setup"), this);
+     showSettingsAct->setStatusTip(tr("shows the central settings"));
+     connect(showSettingsAct, SIGNAL(triggered()), this, SLOT(displaySettings()));
+     clearQuickAct = new QAction(tr("&clear Quicklist"),this);
+     clearQuickAct->setStatusTip(tr("clears the quicklist for the settings"));
+     connect(clearQuickAct,SIGNAL(triggered()),this,SLOT(clearList()));
+     saveSettingsAct = new QAction(tr("&Save Settings"), this);
+     saveSettingsAct->setStatusTip(tr("savesthe central settings to a file"));
+     connect(saveSettingsAct, SIGNAL(triggered()), this, SLOT(saveSettings()));
+     loadSettingsAct = new QAction(tr("&Load Settings"), this);
+     loadSettingsAct->setStatusTip(tr("loads the central settings from a file"));
+     connect(loadSettingsAct, SIGNAL(triggered()), this, SLOT(loadSettings()));
+ }

@@ -1,0 +1,142 @@
+\hypertarget{class_imagemonitor}{
+\section{Imagemonitor Class Reference}
+\label{class_imagemonitor}\index{Imagemonitor@{Imagemonitor}}
+}
+
+
+Class for displaying the images on the screen.  
+
+
+
+
+{\ttfamily \#include $<$imagemonitor.h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_imagemonitor_a4138a1ec1a08b5a7893b4c7f05b879d7}{
+void {\bfseries autoscaleColor} ()}
+\label{class_imagemonitor_a4138a1ec1a08b5a7893b4c7f05b879d7}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_imagemonitor_a1c0bf4241ee837b9b35d1c58a2ea2b00}{
+{\bfseries Imagemonitor} (\hyperlink{class_dataset}{Dataset} $\ast$settings, \hyperlink{class_main_window}{MainWindow} $\ast$mainapp, std::string name, QWidget $\ast$parent=0)}
+\label{class_imagemonitor_a1c0bf4241ee837b9b35d1c58a2ea2b00}
+
+\item 
+void \hyperlink{class_imagemonitor_ab690a689570031692fa720533e0295c1}{updateimg} ()
+\begin{DoxyCompactList}\small\item\em generates RGB image and displays it \item\end{DoxyCompactList}\item 
+\hypertarget{class_imagemonitor_a58d50d7116ec1c67b1551d6f2ee1d727}{
+void {\bfseries readfile} ()}
+\label{class_imagemonitor_a58d50d7116ec1c67b1551d6f2ee1d727}
+
+\item 
+\hypertarget{class_imagemonitor_a2a22ba712d600d321c41e80b51c0f17e}{
+void \hyperlink{class_imagemonitor_a2a22ba712d600d321c41e80b51c0f17e}{setImage} (\hyperlink{class_imagedata}{Imagedata} $\ast$img)}
+\label{class_imagemonitor_a2a22ba712d600d321c41e80b51c0f17e}
+
+\begin{DoxyCompactList}\small\item\em sets the new image to be diplayed and updates the display \item\end{DoxyCompactList}\item 
+void \hyperlink{class_imagemonitor_ad28d3ed34ad3767cc83e3e2f5240f220}{createPalette} ()
+\begin{DoxyCompactList}\small\item\em creates the palette from a vector of colors \item\end{DoxyCompactList}\item 
+void \hyperlink{class_imagemonitor_ae7e969d70d78493c0ac62e683ba5beec}{clear} ()
+\item 
+\hypertarget{class_imagemonitor_acd3d0eb4f78a1cd83d45cf653eeccfdd}{
+void {\bfseries toFile} (string filename)}
+\label{class_imagemonitor_acd3d0eb4f78a1cd83d45cf653eeccfdd}
+
+\item 
+void \hyperlink{class_imagemonitor_a34e7b741b7ddc4b2879b6d9d93c334fe}{wheelEvent} (QGraphicsSceneWheelEvent $\ast$event)
+\begin{DoxyCompactList}\small\item\em if ALT is pressed and the mouse wheel is turned this function is called \item\end{DoxyCompactList}\item 
+\hypertarget{class_imagemonitor_a92754ed559966dc2f1f07cf688e3fb01}{
+void {\bfseries mouseMoveEvent} (QGraphicsSceneMouseEvent $\ast$mouseEvent)}
+\label{class_imagemonitor_a92754ed559966dc2f1f07cf688e3fb01}
+
+\item 
+\hypertarget{class_imagemonitor_a1a0619ed3a108a2f4b8fdd676ff36316}{
+void {\bfseries setColorScale} (float newscale)}
+\label{class_imagemonitor_a1a0619ed3a108a2f4b8fdd676ff36316}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for displaying the images on the screen. Stores the data in an \hyperlink{class_imagedata}{Imagedata} class. And displays it using different colorscheemes. Also zooming capabilities and regions of interes should be implemented here. 
+
+Definition at line 29 of file imagemonitor.h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_imagemonitor_ae7e969d70d78493c0ac62e683ba5beec}{
+\index{Imagemonitor@{Imagemonitor}!clear@{clear}}
+\index{clear@{clear}!Imagemonitor@{Imagemonitor}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Imagemonitor::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_imagemonitor_ae7e969d70d78493c0ac62e683ba5beec}
+removes all items and deletes them 
+
+Definition at line 102 of file imagemonitor.cpp.
+
+\hypertarget{class_imagemonitor_ad28d3ed34ad3767cc83e3e2f5240f220}{
+\index{Imagemonitor@{Imagemonitor}!createPalette@{createPalette}}
+\index{createPalette@{createPalette}!Imagemonitor@{Imagemonitor}}
+\subsubsection[{createPalette}]{\setlength{\rightskip}{0pt plus 5cm}void Imagemonitor::createPalette (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_imagemonitor_ad28d3ed34ad3767cc83e3e2f5240f220}
+
+
+creates the palette from a vector of colors 
+
+creates the Palette vrom a vector of colors stored in the central settings The vector should have n$\ast$3 entries which are interpreted as R1 G1 B1 R2 G2..... where R1 is the red component of the first color. The colors are placed equidistant in the number space and a smooth transition between the colors is created. 
+
+Definition at line 76 of file imagemonitor.cpp.
+
+\hypertarget{class_imagemonitor_ab690a689570031692fa720533e0295c1}{
+\index{Imagemonitor@{Imagemonitor}!updateimg@{updateimg}}
+\index{updateimg@{updateimg}!Imagemonitor@{Imagemonitor}}
+\subsubsection[{updateimg}]{\setlength{\rightskip}{0pt plus 5cm}void Imagemonitor::updateimg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_imagemonitor_ab690a689570031692fa720533e0295c1}
+
+
+generates RGB image and displays it 
+
+An RGB image is generated from the float data using the given palette, colorscalings, etc. The RGB image is then displayed 
+
+Definition at line 49 of file imagemonitor.cpp.
+
+\hypertarget{class_imagemonitor_a34e7b741b7ddc4b2879b6d9d93c334fe}{
+\index{Imagemonitor@{Imagemonitor}!wheelEvent@{wheelEvent}}
+\index{wheelEvent@{wheelEvent}!Imagemonitor@{Imagemonitor}}
+\subsubsection[{wheelEvent}]{\setlength{\rightskip}{0pt plus 5cm}void Imagemonitor::wheelEvent (
+\begin{DoxyParamCaption}
+\item[{QGraphicsSceneWheelEvent $\ast$}]{ event}
+\end{DoxyParamCaption}
+)}}
+\label{class_imagemonitor_a34e7b741b7ddc4b2879b6d9d93c334fe}
+
+
+if ALT is pressed and the mouse wheel is turned this function is called 
+
+from the rotation of the wheel a scalingfactor is calculated, which is used for colorscaling or coloroffset (if shift is pressed) 
+
+Definition at line 129 of file imagemonitor.cpp.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/gui\_\-graphs/imagemonitor.h\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/gui\_\-graphs/imagemonitor.cpp\end{DoxyCompactItemize}

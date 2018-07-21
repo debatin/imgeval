@@ -1,0 +1,260 @@
+Cs.mat	u	
+CsCsxgaussian0	d	41.6774
+CsCsxgaussian1	d	22.84135
+CsCsxgaussian2	d	237.9762
+CsCsygaussian0	d	31.88734
+CsCsygaussian1	d	85.54243
+CsCsygaussian2	d	24.128
+CsNROISum	d	1412.726
+CsNROISum2	d	337282.5
+CsNfit	d	708.5977
+CsNmarker	i	4
+CsPSDensity_sigmaT	d	5.132561e-007
+CsPSDensity_wT	d	7.832787e-008
+CsPeakdensity[cm-3]	d	4.000712e+009
+CsTemp[K]	d	1e-005
+Cs_fitfunction	s	gaussian
+Cs_fitstart_x	i	315
+Cs_fitstart_y	i	195
+Cs_flip_horizontal	i	1
+Cs_marker1_x	i	864
+Cs_marker1_y	i	320
+Cs_marker2_x	i	488
+Cs_marker2_y	i	266
+Cs_marker3_x	i	461
+Cs_marker3_y	i	378
+Cs_marker4_x	i	555
+Cs_marker4_y	i	448
+Cs_rot	d	0
+Cs_rot90	i	3
+Cscrossection	d	0.252
+Csdetuning	d	0
+Csending_atoms	s	_img2.tif
+Csending_noatoms	s	_img4.tif
+Cserrorpatterns	w	0
+Cslinewidth	d	5.9
+Csmass_[amu]	d	132.905
+CssubtractRegion	i	1
+Csw_in[Hz]	d	100
+Cswavelength	d	8.52e-007
+Cswx_calc[Hz]	d	105.5933
+Cswy_calc[Hz]	d	331.6212
+CsxNfit	d	1139.573
+CsxRMS_radius_pix	d	10.90817
+CsxRMS_radius_um	d	37.69862
+Csxcenter_pix	d	520.8414
+Csxheight_at/pix	d	41.6774
+CsyNfit	d	277.6221
+CsyRMS_radius_pix	d	3.473327
+CsyRMS_radius_um	d	12.00382
+Csycenter_pix	d	436.5424
+Csyheight_at/pix	d	31.88734
+HighfinessefreqGHz	d	-9.993082e+007
+HighfinessefreqHz	d	384244
+Messnr	s	1337
+RawdataDir	s	F:/Rawdata/2011/Aug/12
+Rb.mat	u	
+RbNROISum	d	49242.57
+RbNROISum2	d	208805.4
+RbNfit	d	51320.5
+RbNmarker	i	4
+RbPSDensity_sigmaT	d	3.242998e-007
+RbPSDensity_wT	d	1.323132e-007
+RbPeakdensity[cm-3]	d	1.054881e+009
+RbRbxbimodal0	d	70140.4
+RbRbxbimodal1	d	497.4418
+RbRbxbimodal2	d	398656.6
+RbRbxbimodal3	d	-1471.817
+RbRbxbimodal4	d	1.681983e+012
+RbRbxbimodal5	d	6.66005e+007
+RbRbxbimodal6	d	-6.659771e+007
+RbRbxgaussian0	d	463.9919
+RbRbxgaussian1	d	138.3434
+RbRbxgaussian2	d	3701.32
+RbRbybimodal0	d	73626.22
+RbRbybimodal1	d	577.6017
+RbRbybimodal2	d	316376.2
+RbRbybimodal3	d	-2163.816
+RbRbybimodal4	d	1.673397e+011
+RbRbybimodal5	d	3.747933e+007
+RbRbybimodal6	d	3.747561e+007
+RbRbygaussian0	d	508.4905
+RbRbygaussian1	d	176.4902
+RbRbygaussian2	d	3407.019
+RbTemp[K]	d	7.7e-006
+Rb_fitfunction	s	gaussian
+Rb_fitstart_x	i	504
+Rb_fitstart_y	i	272
+Rb_flip_horizontal	i	1
+Rb_marker1_x	i	864
+Rb_marker1_y	i	320
+Rb_marker2_x	i	488
+Rb_marker2_y	i	266
+Rb_marker3_x	i	457
+Rb_marker3_y	i	374
+Rb_marker4_x	i	555
+Rb_marker4_y	i	448
+Rb_rot	d	0
+Rb_rot90	i	3
+Rbcrossection	d	0.261
+Rbdetuning	d	0
+Rbending_atoms	s	_img1.tif
+Rbending_noatoms	s	_img3.tif
+Rberrorpatterns	w	0
+Rblinewidth	d	6.7
+Rbmass_[amu]	d	86.909
+RbsubtractRegion	i	1
+Rbw_in[Hz]	d	22
+Rbwavelength	d	7.8e-007
+Rbwx_calc[Hz]	d	29.05416
+Rbwy_calc[Hz]	d	30.28303
+RbxBEC_Fract	d	1
+RbxNBEC	d	1.19489e+020
+RbxNTh	d	1.148863e+008
+RbxNfit	d	50033.82
+RbxRMS_radius_pix	d	43.0193
+RbxRMS_radius_um	d	148.6747
+Rbxcenter_pix	d	549.3434
+Rbxheight_at/pix	d	463.9919
+RbyBEC_Fract	d	1
+RbyNBEC	d	6.689898e+018
+RbyNTh	d	1.074323e+008
+RbyNfit	d	52607.19
+RbyRMS_radius_pix	d	41.27359
+RbyRMS_radius_um	d	142.6415
+Rbycenter_pix	d	492.4902
+Rbyheight_at/pix	d	508.4905
+SaveFileName	s	F:/Rawdata/log_bilder.txt
+SaveStyle	s	Gost
+UDP_port	i	703
+X	d	0.025263
+_	d	2.482735e-312
+_fitstart_x	i	0
+_fitstart_y	i	0
+_marker1_x	i	0
+_marker1_y	i	0
+_marker2_x	i	10
+_marker2_y	i	10
+a	d	0.115789
+autoupdate_checked	i	1
+b	d	-10
+backgroundfiles	w	6
+F:/Rawdata/2011/Aug/12/1005
+F:/Rawdata/2011/Aug/12/1006
+F:/Rawdata/2011/Aug/12/1007
+F:/Rawdata/2011/Aug/12/1008
+F:/Rawdata/2011/Aug/12/1009
+F:/Rawdata/2011/Aug/12/1010
+beatfrequency3	d	578.659
+beatfrequency4	d	19.038
+c	d	2.513808
+commandlist	w	12
++=
+-=
+=
+*=
+/=
+rowsmooth
+colsmooth
+del
+refresh 
+im scale 1.0 
+im xscale 1.0 
+im yscale 1.0 
+directory_rescan_mode	i	1
+directory_rescan_time	i	1
+eddeee_	d	-1
+emp)	d	10.9
+emperature)	d	19
+ending_atoms	s	
+ending_noatoms	s	
+external_data_files	w	5
+F:\Rawdata\wavemeter.dat
+F:\Rawdata\detunings.dat
+F:\Rawdata\counter2.dat
+F:\Rawdata\counter1.dat
+F:\Rawdata\Highfinessewavemeter.dat
+external_settings_files	w	0
+fakme	w	0
+file_extensions	w	4
+_img1.tif
+_img3.tif
+_img2.tif
+_img4.tif
+fit_area_fraction	d	0.2
+freq_err	d	0.1
+frequency	d	191166.6
+fuckyou	w	0
+imgscript1	w	10
+Rbsum += Rbcurrent
+Rbsum1 *= 0
+Rbsum1 +=  Rbcurrent
+Rbsum1 -= Rbtemp
+Rbtemp *= 0
+Rbtemp += Rbcurrent
+Cssum += Cscurrent
+Rbcurrent colsmooth 19
+Rbcurrent rowsmooth 19
+Cssum refresh
+imgscriptdivide	w	6
+Rbdiv *= 0 
+Rbdiv += Rbsum
+Rbdiv *= 0.6
+Rbdiv -= Rbwo
+Rbdiv refresh
+Csdiv *= 0
+imgscriptempty	w	0
+imgscriptname	s	fakme
+imgscriptwithoutbeam	w	2
+Rbwo += Rbcurrent
+Cswo += Cscurrent
+imgtest	w	6
+Rbdiff*=0
+Rbdiff+=Rbcurrent
+Rbdiff-=Rbtemp
+Rbtempt=Rbcurrent
+Rbtempt*=0
+Rbtempt+=Rbcurrent
+m/pixel	d	3.456e-006
+main_as_frames	i	0
+noautofit	i	0
+number_of_species	i	2
+palette	v	15	0	0	255	0	255	0	255	0	0	255	255	255	0	0	255
+rap_	d	0
+req	d	12.30769
+req)	d	4.25641
+requency	d	15.76923
+results_quicklist	w	6
+RbxRMS_radius_um
+CsyRMS_radius_um
+RbNROISum2
+CsNROISum2
+Rbdetuning
+Csdetuning
+resultseditfontsize	i	12
+resultslabelfontsize	i	12
+save_mode	i	2
+saveimg	i	1
+saveimg_quality	i	-1
+saveimg_suffix	s	.tif
+scan_directory(0=false)	i	0
+settings_quicklist	w	2
+Rb_rot
+Cs_rot
+settingseditfontsize	i	12
+settingslabelfontsize	i	12
+species1	s	Rb
+species2	s	Cs
+subtractRegion	i	0
+take_as_background	i	0
+test	d	0.444444
+test2	d	2
+test4	d	3
+test_	d	8.888889
+time	d	0.1
+time_	d	17
+wavelength	d	1568.226
+wavelength_err	d	2.624707e-006
+wavemeterfile	s	
+wavenumber	d	6376.63
+wn_err	d	1.067243e-005

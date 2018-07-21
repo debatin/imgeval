@@ -1,0 +1,190 @@
+Cs.mat	u	
+CsCsxgaussian0	d	554.1816
+CsCsxgaussian1	d	525.0568
+CsCsxgaussian2	d	195.8277
+CsCsygaussian0	d	1299.21
+CsCsygaussian1	d	524.2437
+CsCsygaussian2	d	146.0144
+CsNROISum	d	37270
+CsNfit	d	20785.86
+CsPSDensity_sigmaT	d	4.516385e-006
+CsPSDensity_wT	d	2.297653e-006
+CsPeakdensity[cm-3]	d	4.10158e+010
+CsTemp[K]	d	1e-005
+Cs_fitfunction	s	gaussian
+Cs_fitstart_x	i	373
+Cs_fitstart_y	i	478
+Cs_flip_horizontal	i	1
+Cs_marker1_x	i	517
+Cs_marker1_y	i	518
+Cs_marker2_x	i	304
+Cs_marker2_y	i	635
+Cs_rot	d	0
+Cs_rot90	i	3
+Cscrossection	d	0.252
+Csdetuning	d	1.22
+Csending_atoms	s	_img2.tif
+Csending_noatoms	s	_img4.tif
+Cslinewidth	d	5.9
+Csmass_[amu]	d	132.905
+CssubtractRegion	i	1
+Csw_in[Hz]	d	100
+Cswavelength	d	8.52e-007
+Cswx_calc[Hz]	d	116.4035
+Cswy_calc[Hz]	d	134.8047
+CsxNfit	d	13745.61
+CsxRMS_radius_pix	d	9.895143
+CsxRMS_radius_um	d	34.19761
+Csxcenter_pix	d	525.0568
+Csxheight_at/pix	d	554.1816
+CsyNfit	d	27826.1
+CsyRMS_radius_pix	d	8.544425
+CsyRMS_radius_um	d	29.52953
+Csycenter_pix	d	524.2437
+Csyheight_at/pix	d	1299.21
+Messnr	s	0078
+RawdataDir	s	F:/Rawdata/2010/Aug/10
+Rb.mat	u	
+RbNROISum	d	931979.1
+RbNfit	d	699276.6
+RbPSDensity_sigmaT	d	2.675782e-006
+RbPSDensity_wT	d	1.802857e-006
+RbPeakdensity[cm-3]	d	3.405121e+009
+RbRbxgaussian0	d	1617.672
+RbRbxgaussian1	d	599.6866
+RbRbxgaussian2	d	119588.7
+RbRbygaussian0	d	16005.78
+RbRbygaussian1	d	519.8498
+RbRbygaussian2	d	205.8321
+RbTemp[K]	d	7.7e-006
+Rb_fitfunction	s	gaussian
+Rb_fitstart_x	i	490
+Rb_fitstart_y	i	261
+Rb_flip_horizontal	i	1
+Rb_marker1_x	i	517
+Rb_marker1_y	i	518
+Rb_marker2_x	i	304
+Rb_marker2_y	i	635
+Rb_rot	d	0
+Rb_rot90	i	3
+Rbcrossection	d	0.261
+Rbdetuning	d	12
+Rbending_atoms	s	_img1.tif
+Rbending_noatoms	s	_img3.tif
+Rblinewidth	d	6.7
+Rbmass_[amu]	d	86.909
+RbsubtractRegion	i	1
+Rbw_in[Hz]	d	22
+Rbwavelength	d	7.8e-007
+Rbwx_calc[Hz]	d	5.11142
+Rbwy_calc[Hz]	d	123.2055
+RbxNfit	d	991540.2
+RbxRMS_radius_pix	d	244.5288
+RbxRMS_radius_um	d	845.0916
+Rbxcenter_pix	d	599.6866
+Rbxheight_at/pix	d	1617.672
+RbyNfit	d	407013.1
+RbyRMS_radius_pix	d	10.14476
+RbyRMS_radius_um	d	35.06028
+Rbycenter_pix	d	519.8498
+Rbyheight_at/pix	d	16005.78
+SaveFileName	s	F:/Rawdata/log_bilder.txt
+SaveStyle	s	Gost
+UDP_port	i	703
+_	d	4.015007e-317
+_fitstart_x	i	0
+_fitstart_y	i	0
+_marker1_x	i	0
+_marker1_y	i	0
+_marker2_x	i	10
+_marker2_y	i	10
+autoupdate_checked	i	1
+backgroundfiles	w	9
+F:/Rawdata/2010/Aug/10/0058
+F:/Rawdata/2010/Aug/10/0059
+F:/Rawdata/2010/Aug/10/0060
+F:/Rawdata/2010/Aug/10/0061
+F:/Rawdata/2010/Aug/10/0062
+F:/Rawdata/2010/Aug/10/0063
+F:/Rawdata/2010/Aug/10/0064
+F:/Rawdata/2010/Aug/10/0065
+F:/Rawdata/2010/Aug/10/0066
+dipole trap_	d	0.12551
+directory_rescan_mode	i	1
+directory_rescan_time	i	1
+eddeee_	d	-1
+ending_atoms	s	
+ending_noatoms	s	
+external_data_files	s	
+fakme	w	0
+file_extensions	w	4
+_img1.tif
+_img3.tif
+_img2.tif
+_img4.tif
+fit_area_fraction	d	0.2
+fuckyou	w	0
+imgscript1	w	10
+Rbsum += Rbcurrent
+Rbsum1 *= 0
+Rbsum1 +=  Rbcurrent
+Rbsum1 -= Rbtemp
+Rbtemp *= 0
+Rbtemp += Rbcurrent
+Cssum += Cscurrent
+Rbcurrent colsmooth 19
+Rbcurrent rowsmooth 19
+Cssum refresh
+imgscriptdivide	w	6
+Rbdiv *= 0 
+Rbdiv += Rbsum
+Rbdiv *= 0.6
+Rbdiv -= Rbwo
+Rbdiv refresh
+Csdiv *= 0
+imgscriptempty	w	0
+imgscriptname	s	fakme
+imgscriptwithoutbeam	w	2
+Rbwo += Rbcurrent
+Cswo += Cscurrent
+imgtest	w	6
+Rbdiff*=0
+Rbdiff+=Rbcurrent
+Rbdiff-=Rbtemp
+Rbtempt=Rbcurrent
+Rbtempt*=0
+Rbtempt+=Rbcurrent
+m/pixel	d	3.456e-006
+main_as_frames	i	0
+noautofit	i	0
+number_of_species	i	2
+palette	v	15	0	0	255	0	255	0	255	0	0	255	255	255	0	0	255
+rap_	d	0.12551
+results_quicklist	w	6
+RbxRMS_radius_um
+RbyRMS_radius_um
+CsxRMS_radius_um
+CsyRMS_radius_um
+RbPeakdensity[cm-3]
+CsPeakdensity[cm-3]
+resultseditfontsize	i	12
+resultslabelfontsize	i	12
+save_mode	i	2
+saveimg	i	1
+saveimg_quality	i	-1
+saveimg_suffix	s	.mat
+scan_directory(0=false)	i	0
+settings_quicklist	w	4
+Rbdetuning
+Csdetuning
+Rb_rot
+Cs_rot
+settingseditfontsize	i	12
+settingslabelfontsize	i	12
+species1	s	Rb
+species2	s	Cs
+subtractRegion	i	0
+take_as_background	i	0
+test_	d	8.888889
+time_	d	14.44444
+wavemeterfile	s	

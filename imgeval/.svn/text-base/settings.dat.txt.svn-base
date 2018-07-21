@@ -1,0 +1,13 @@
+Cscrossection	d	0.1945
+Csdetuning	d	1.22
+Cslinewidth	d	5220000
+Cswavelength	d	8.52e-07
+Rbcrossection	d	0.223
+Rbdetuning	d	1.95
+Rblinewidth	d	5950000
+Rbwavelength	d	7.8e-07
+SaveFileName	s	/home/debatin/programmierung/projekte/imgeval/ttii.txt
+SaveOnProceed	d	1
+SaveStyle	s	Gost
+m/pixel	d	3.456e-06
+palette	v	15	255	0	0	0	0	255	0	255	0	255	0	0	255	255	255

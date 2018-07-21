@@ -1,0 +1,88 @@
+\hypertarget{class_measurement_info}{
+\section{MeasurementInfo Class Reference}
+\label{class_measurement_info}\index{MeasurementInfo@{MeasurementInfo}}
+}
+Path and Measurement selection.  
+
+
+{\tt \#include $<$measurementinfo.h$>$}
+
+\subsection*{Public Slots}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_measurement_info_7e3828cc92388664cb056629a1261bc9}{
+void \hyperlink{class_measurement_info_7e3828cc92388664cb056629a1261bc9}{scandir} ()}
+\label{class_measurement_info_7e3828cc92388664cb056629a1261bc9}
+
+\begin{CompactList}\small\item\em scans the directory for new measurements \item\end{CompactList}\item 
+void \hyperlink{class_measurement_info_9eb41c5663b9ee47463d9dead95d608e}{rescandir} ()
+\begin{CompactList}\small\item\em scans the directory for new measurements \item\end{CompactList}\item 
+\hypertarget{class_measurement_info_842b965d32222bd2e941141a32c225d6}{
+void \hyperlink{class_measurement_info_842b965d32222bd2e941141a32c225d6}{selectD} ()}
+\label{class_measurement_info_842b965d32222bd2e941141a32c225d6}
+
+\begin{CompactList}\small\item\em Show directory selection dialog. \item\end{CompactList}\item 
+\hypertarget{class_measurement_info_39538afba5954db7e9db10832edaffec}{
+void \textbf{measnrChanged} (const QString meas)}
+\label{class_measurement_info_39538afba5954db7e9db10832edaffec}
+
+\end{CompactItemize}
+\subsection*{Signals}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_measurement_info_2237924b71240edd2690d1d4b265cabc}{
+void \textbf{measSelected} (QString meas)}
+\label{class_measurement_info_2237924b71240edd2690d1d4b265cabc}
+
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_measurement_info_91cfa8d8cf8d55bc0a1eef64b2afec05}{
+\hyperlink{class_measurement_info_91cfa8d8cf8d55bc0a1eef64b2afec05}{MeasurementInfo} (\hyperlink{class_dataset}{Dataset} $\ast$settings, QWidget $\ast$parent=0)}
+\label{class_measurement_info_91cfa8d8cf8d55bc0a1eef64b2afec05}
+
+\begin{CompactList}\small\item\em constructor for GUI \item\end{CompactList}\item 
+\hypertarget{class_measurement_info_769631ddd3d09ea5abe64fa96fe88e6f}{
+QDir \textbf{getDir} ()}
+\label{class_measurement_info_769631ddd3d09ea5abe64fa96fe88e6f}
+
+\item 
+QStringList \hyperlink{class_measurement_info_9e7998dfd814949ca99d43f0f1ac7f7a}{getImgList} ()
+\begin{CompactList}\small\item\em current selected Directory \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Path and Measurement selection. 
+
+Allows to select a path to the Pictures taken. Scanns the directory for Filesequences named appropriately and includes the found filesequences in a measurement selector The directory is rescanned every 2 seconds for new measurements. the path is stored, when the programm is quit and restored afterwards 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_measurement_info_9e7998dfd814949ca99d43f0f1ac7f7a}{
+\index{MeasurementInfo@{MeasurementInfo}!getImgList@{getImgList}}
+\index{getImgList@{getImgList}!MeasurementInfo@{MeasurementInfo}}
+\subsubsection[{getImgList}]{\setlength{\rightskip}{0pt plus 5cm}QStringList MeasurementInfo::getImgList ()}}
+\label{class_measurement_info_9e7998dfd814949ca99d43f0f1ac7f7a}
+
+
+current selected Directory 
+
+creates list of available imgs (properly named)
+
+scans the current Measurementdirectory for (new) files that are in the scheme xxxxyyy where for a name xxxx to be accepted there has to ba a file xxxxyyy for each yyy in \char`\"{}file\_\-extensions\char`\"{} \hypertarget{class_measurement_info_9eb41c5663b9ee47463d9dead95d608e}{
+\index{MeasurementInfo@{MeasurementInfo}!rescandir@{rescandir}}
+\index{rescandir@{rescandir}!MeasurementInfo@{MeasurementInfo}}
+\subsubsection[{rescandir}]{\setlength{\rightskip}{0pt plus 5cm}void MeasurementInfo::rescandir ()\hspace{0.3cm}{\tt  \mbox{[}slot\mbox{]}}}}
+\label{class_measurement_info_9eb41c5663b9ee47463d9dead95d608e}
+
+
+scans the directory for new measurements 
+
+scans the directory and sets the measlist for each new item which then might also start a calculation 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/measurementinfo.h\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/measurementinfo.cpp\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/moc\_\-measurementinfo.cpp\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/release/moc\_\-measurementinfo.cpp\end{CompactItemize}

@@ -1,0 +1,39 @@
+\hypertarget{structtwopoints}{
+\section{twopoints Struct Reference}
+\label{structtwopoints}\index{twopoints@{twopoints}}
+}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structtwopoints_ac492367380baffbaacf08f2a824e5520}{
+int \hyperlink{structtwopoints_ac492367380baffbaacf08f2a824e5520}{x1}}
+\label{structtwopoints_ac492367380baffbaacf08f2a824e5520}
+
+\begin{DoxyCompactList}\small\item\em position \item\end{DoxyCompactList}\item 
+\hypertarget{structtwopoints_a72f7ea31da611dd032c6900daedaaa9e}{
+int \hyperlink{structtwopoints_a72f7ea31da611dd032c6900daedaaa9e}{y1}}
+\label{structtwopoints_a72f7ea31da611dd032c6900daedaaa9e}
+
+\begin{DoxyCompactList}\small\item\em position \item\end{DoxyCompactList}\item 
+\hypertarget{structtwopoints_a2fd09c46cb6fbcae8413474c2a3b22a6}{
+int \hyperlink{structtwopoints_a2fd09c46cb6fbcae8413474c2a3b22a6}{wx}}
+\label{structtwopoints_a2fd09c46cb6fbcae8413474c2a3b22a6}
+
+\begin{DoxyCompactList}\small\item\em width \item\end{DoxyCompactList}\item 
+\hypertarget{structtwopoints_a82443a29968824824cc2627a0b2eefaf}{
+int \hyperlink{structtwopoints_a82443a29968824824cc2627a0b2eefaf}{wy}}
+\label{structtwopoints_a82443a29968824824cc2627a0b2eefaf}
+
+\begin{DoxyCompactList}\small\item\em height \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file imgdata.h.
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/datastructure/imgdata.h\end{DoxyCompactItemize}

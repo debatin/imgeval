@@ -1,0 +1,261 @@
+\hypertarget{class_dataset}{
+\section{Dataset Class Reference}
+\label{class_dataset}\index{Dataset@{Dataset}}
+}
+
+
+container for various central data  
+
+
+
+
+{\ttfamily \#include $<$dataset.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dataset_a2ef0a4a688a218d55ef061c6df659a4a}{Dataset} ()
+\begin{DoxyCompactList}\small\item\em standard constructor \item\end{DoxyCompactList}\item 
+void \hyperlink{class_dataset_a8afc67ccb89196d5076a985dea69e63b}{fromFile} (const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em reads data from a file \item\end{DoxyCompactList}\item 
+void \hyperlink{class_dataset_a8744f8cd978bb93285036369f82aec07}{toFile} (const char $\ast$, std::string style=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em writes dataset to file \item\end{DoxyCompactList}\item 
+\hypertarget{class_dataset_aae325ef263a39c2af75fab3010a9d611}{
+void \hyperlink{class_dataset_aae325ef263a39c2af75fab3010a9d611}{display} ()}
+\label{class_dataset_aae325ef263a39c2af75fab3010a9d611}
+
+\begin{DoxyCompactList}\small\item\em not working \item\end{DoxyCompactList}\item 
+void \hyperlink{class_dataset_aafb1c5590593838bb9cf699ed7fbbb06}{store} (string name, double d, char category='u')
+\begin{DoxyCompactList}\small\item\em store double values to the dataset \item\end{DoxyCompactList}\item 
+\hypertarget{class_dataset_aca1aabe33cb0251efd3931ae4d5ce004}{
+void {\bfseries store} (string name, int i, char category='u')}
+\label{class_dataset_aca1aabe33cb0251efd3931ae4d5ce004}
+
+\item 
+\hypertarget{class_dataset_a5c24681bba02b24eeac86da8888deb4e}{
+void \hyperlink{class_dataset_a5c24681bba02b24eeac86da8888deb4e}{store} (string name, string s, char category='u')}
+\label{class_dataset_a5c24681bba02b24eeac86da8888deb4e}
+
+\begin{DoxyCompactList}\small\item\em store string values to dataset \item\end{DoxyCompactList}\item 
+\hypertarget{class_dataset_a2b96ae9bba25b4581f13b1a87a871c24}{
+void \hyperlink{class_dataset_a2b96ae9bba25b4581f13b1a87a871c24}{store} (string name, vector$<$ double $>$ vd, char category='u')}
+\label{class_dataset_a2b96ae9bba25b4581f13b1a87a871c24}
+
+\begin{DoxyCompactList}\small\item\em store vectors of double to dataset \item\end{DoxyCompactList}\item 
+\hypertarget{class_dataset_aa41d0b7680bd042435f310965276bdf7}{
+void \hyperlink{class_dataset_aa41d0b7680bd042435f310965276bdf7}{store} (string name, vector$<$ string $>$ vs, char category='u')}
+\label{class_dataset_aa41d0b7680bd042435f310965276bdf7}
+
+\begin{DoxyCompactList}\small\item\em store vectors of strings to dataset \item\end{DoxyCompactList}\item 
+void \hyperlink{class_dataset_a6ef3252127ddb9d8ef7fd293f1dfc8dc}{storeStr} (string name, string \hyperlink{structdata}{data})
+\item 
+void \hyperlink{class_dataset_ae2406b5384d66b5e10b0a3c6c2e09847}{join} (\hyperlink{class_dataset}{Dataset} $\ast$j)
+\begin{DoxyCompactList}\small\item\em adds the data in the dataset to this one \item\end{DoxyCompactList}\item 
+\hypertarget{class_dataset_a36f39412a23b19fd7ad68ffd76242d50}{
+void {\bfseries setCategory} (char c)}
+\label{class_dataset_a36f39412a23b19fd7ad68ffd76242d50}
+
+\item 
+\hypertarget{class_dataset_ab943849b86f7078c078785123cceaea0}{
+\hyperlink{classm__entry}{m\_\-entry} \& {\bfseries get} (string name)}
+\label{class_dataset_ab943849b86f7078c078785123cceaea0}
+
+\item 
+\hypertarget{class_dataset_ab8c6f95e0edf9e84e02bccb5866b7a69}{
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classm__entry}{m\_\-entry} \& \hyperlink{class_dataset_ab8c6f95e0edf9e84e02bccb5866b7a69}{get} (string name, T d, char category='u')}
+\label{class_dataset_ab8c6f95e0edf9e84e02bccb5866b7a69}
+
+\begin{DoxyCompactList}\small\item\em get a value for the tag name. If it doesn't exist create with default value d \item\end{DoxyCompactList}\item 
+\hypertarget{class_dataset_af0e96fbb98d5e01f9cb9eaae57000e02}{
+bool \hyperlink{class_dataset_af0e96fbb98d5e01f9cb9eaae57000e02}{exist} (string name)}
+\label{class_dataset_af0e96fbb98d5e01f9cb9eaae57000e02}
+
+\begin{DoxyCompactList}\small\item\em check whteher an entry exists \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+container for various central data The idea of this class is to provide a flexible container for data There are currently 2 containers used in the program one for the central settings which do not change from dataset to dataset and one for the data exracted from the pictures. The data in the container is identified by its name. Data should be stored via the store function. It can be retrieved via the \mbox{[}\mbox{]} operator as in any other std::map. This operator returns an 'm\_\-entry' object Example: data.store(\char`\"{}myname\char`\"{},d); double e = data\mbox{[}\char`\"{}myname\char`\"{}\mbox{]}.d
+
+For storage and loading of the data the functions toFile and FromFile arprovided. an optional style tag can be used to define the file format. in case one wants different File Formats for the data one just has to modify these functions. 
+
+Definition at line 58 of file dataset.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_dataset_a2ef0a4a688a218d55ef061c6df659a4a}{
+\index{Dataset@{Dataset}!Dataset@{Dataset}}
+\index{Dataset@{Dataset}!Dataset@{Dataset}}
+\subsubsection[{Dataset}]{\setlength{\rightskip}{0pt plus 5cm}Dataset::Dataset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_dataset_a2ef0a4a688a218d55ef061c6df659a4a}
+
+
+standard constructor 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 13 of file dataset.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dataset_a8afc67ccb89196d5076a985dea69e63b}{
+\index{Dataset@{Dataset}!fromFile@{fromFile}}
+\index{fromFile@{fromFile}!Dataset@{Dataset}}
+\subsubsection[{fromFile}]{\setlength{\rightskip}{0pt plus 5cm}void Dataset::fromFile (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ filename}
+\end{DoxyParamCaption}
+)}}
+\label{class_dataset_a8afc67ccb89196d5076a985dea69e63b}
+
+
+reads data from a file 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ currently only one format is supported for reading data from file The format is the native saving format. Tag type data. types are d double i int s string v vector$<$double$>$ w vector$<$string$>$ if data is a vector it starts with the number of entries in the vector followed by tab separated values: \char`\"{}jim\char`\"{} s \char`\"{}some string till end of line\char`\"{} \char`\"{}joe\char`\"{} d 1212.2e-\/10 \char`\"{}jhon\char`\"{} v \char`\"{}johanna\char`\"{} w 2 first name seconde name \char`\"{}jelka\char`\"{} d 23 
+\begin{DoxyParams}{Parameters}
+{\em filename} & fiela to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 58 of file dataset.cpp.
+
+\hypertarget{class_dataset_ae2406b5384d66b5e10b0a3c6c2e09847}{
+\index{Dataset@{Dataset}!join@{join}}
+\index{join@{join}!Dataset@{Dataset}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}void Dataset::join (
+\begin{DoxyParamCaption}
+\item[{{\bf Dataset} $\ast$}]{ j}
+\end{DoxyParamCaption}
+)}}
+\label{class_dataset_ae2406b5384d66b5e10b0a3c6c2e09847}
+
+
+adds the data in the dataset to this one 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em j} & data to be added to this dataset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 252 of file dataset.cpp.
+
+\hypertarget{class_dataset_aafb1c5590593838bb9cf699ed7fbbb06}{
+\index{Dataset@{Dataset}!store@{store}}
+\index{store@{store}!Dataset@{Dataset}}
+\subsubsection[{store}]{\setlength{\rightskip}{0pt plus 5cm}void Dataset::store (
+\begin{DoxyParamCaption}
+\item[{string}]{ tag, }
+\item[{double}]{ d, }
+\item[{char}]{ category = {\ttfamily 'u'}}
+\end{DoxyParamCaption}
+)}}
+\label{class_dataset_aafb1c5590593838bb9cf699ed7fbbb06}
+
+
+store double values to the dataset 
+
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ 
+\begin{DoxyParams}{Parameters}
+{\em s} & tagname \\
+\hline
+{\em d} & value \\
+\hline
+{\em category} & letter indicating the category \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+create\_\-categories()) 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 205 of file dataset.cpp.
+
+\hypertarget{class_dataset_a6ef3252127ddb9d8ef7fd293f1dfc8dc}{
+\index{Dataset@{Dataset}!storeStr@{storeStr}}
+\index{storeStr@{storeStr}!Dataset@{Dataset}}
+\subsubsection[{storeStr}]{\setlength{\rightskip}{0pt plus 5cm}void Dataset::storeStr (
+\begin{DoxyParamCaption}
+\item[{string}]{ s, }
+\item[{string}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{class_dataset_a6ef3252127ddb9d8ef7fd293f1dfc8dc}
+$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$$\ast$ \begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 240 of file dataset.cpp.
+
+\hypertarget{class_dataset_a8744f8cd978bb93285036369f82aec07}{
+\index{Dataset@{Dataset}!toFile@{toFile}}
+\index{toFile@{toFile}!Dataset@{Dataset}}
+\subsubsection[{toFile}]{\setlength{\rightskip}{0pt plus 5cm}void Dataset::toFile (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ filename, }
+\item[{std::string}]{ style = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{class_dataset_a8744f8cd978bb93285036369f82aec07}
+
+
+writes dataset to file 
+
+stores the data in dataset into a file currently two file formats are supported. One format where there is one line per entry consisting of the tag or name, the types of the data and the data. On saving the old file is replaced. The other style called \char`\"{}Gost\char`\"{} is similar to the way the experimental data is stored in the Gost experiment. There all the data is stored to one single line in a tab separated format of alternating tag data tag data ..... The new data is appended to an existing file 
+\begin{DoxyParams}{Parameters}
+{\em filename} & file to be written \\
+\hline
+{\em style} & \char`\"{}Gost\char`\"{} or anything else for Gost all params are stored in a single line for the standard the fileformat is as for the read in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Markus Debatin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+09-\/2010 
+\end{DoxyDate}
+
+
+Definition at line 127 of file dataset.cpp.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/datastructure/dataset.h\item 
+F:/imgeval\_\-sandbox/imgeval/imgeval/datastructure/dataset.cpp\end{DoxyCompactItemize}

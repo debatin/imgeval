@@ -1,0 +1,141 @@
+\hypertarget{class_input_list_thread}{
+\section{InputListThread Class Reference}
+\label{class_input_list_thread}\index{InputListThread@{InputListThread}}
+}
+Thread class for reading the contents of the directory.  
+
+
+{\tt \#include $<$inputlistthread.h$>$}
+
+\subsection*{Signals}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_thread_e50baa8521f48cceed2228439eb8ec86}{
+void \textbf{newDataFound} (QString)}
+\label{class_input_list_thread_e50baa8521f48cceed2228439eb8ec86}
+
+\item 
+\hypertarget{class_input_list_thread_23e7921cb0cab1b6ead9d932d3168b9f}{
+void \textbf{dirmodified} (QString)}
+\label{class_input_list_thread_23e7921cb0cab1b6ead9d932d3168b9f}
+
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_thread_16738682047139388e5920b1fc9c41dd}{
+\hyperlink{class_input_list_thread_16738682047139388e5920b1fc9c41dd}{InputListThread} (\hyperlink{class_dataset}{Dataset} $\ast$setting, QDir dir)}
+\label{class_input_list_thread_16738682047139388e5920b1fc9c41dd}
+
+\begin{CompactList}\small\item\em constructor of the thread \item\end{CompactList}\item 
+\hypertarget{class_input_list_thread_f3d8045a131790ebbec72442183af311}{
+\hyperlink{class_input_list_thread_f3d8045a131790ebbec72442183af311}{$\sim$InputListThread} ()}
+\label{class_input_list_thread_f3d8045a131790ebbec72442183af311}
+
+\begin{CompactList}\small\item\em destructor stopts the thread \item\end{CompactList}\item 
+\hypertarget{class_input_list_thread_395329e5dc6b058b484dd30cc9d7e37f}{
+QStringList \textbf{getMeasList} ()}
+\label{class_input_list_thread_395329e5dc6b058b484dd30cc9d7e37f}
+
+\item 
+\hypertarget{class_input_list_thread_027afb3f352cef38683f2a8983888e45}{
+void \hyperlink{class_input_list_thread_027afb3f352cef38683f2a8983888e45}{setDir} (QDir newdir)}
+\label{class_input_list_thread_027afb3f352cef38683f2a8983888e45}
+
+\begin{CompactList}\small\item\em set the directory to scan and scans it \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Slots}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_thread_135b839a5a4660b1cce9c6899640a8cb}{
+void \hyperlink{class_input_list_thread_135b839a5a4660b1cce9c6899640a8cb}{updateExtensions} ()}
+\label{class_input_list_thread_135b839a5a4660b1cce9c6899640a8cb}
+
+\begin{CompactList}\small\item\em set the file name extensions to scan for \item\end{CompactList}\item 
+\hypertarget{class_input_list_thread_64bea926524e1adb1a5df1a9dbab0ab4}{
+void \textbf{rescandir} ()}
+\label{class_input_list_thread_64bea926524e1adb1a5df1a9dbab0ab4}
+
+\end{CompactItemize}
+\subsection*{Protected Member Functions}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_thread_3dfde19032c056b17ce4c083826ee4ed}{
+void \hyperlink{class_input_list_thread_3dfde19032c056b17ce4c083826ee4ed}{scandir} ()}
+\label{class_input_list_thread_3dfde19032c056b17ce4c083826ee4ed}
+
+\begin{CompactList}\small\item\em scans the directory for data and takes it as its list. \item\end{CompactList}\item 
+\hypertarget{class_input_list_thread_84f9bec62b5e04bc31ab2318f0ed4999}{
+QStringList \hyperlink{class_input_list_thread_84f9bec62b5e04bc31ab2318f0ed4999}{getImgList} ()}
+\label{class_input_list_thread_84f9bec62b5e04bc31ab2318f0ed4999}
+
+\begin{CompactList}\small\item\em creates list of available imgs (properly named) \item\end{CompactList}\item 
+\hypertarget{class_input_list_thread_69824a70efa3507388e1f6d5ffc69777}{
+void \hyperlink{class_input_list_thread_69824a70efa3507388e1f6d5ffc69777}{run} ()}
+\label{class_input_list_thread_69824a70efa3507388e1f6d5ffc69777}
+
+\begin{CompactList}\small\item\em main thread This Function is the separate Thread \item\end{CompactList}\end{CompactItemize}
+\subsection*{Protected Attributes}
+\begin{CompactItemize}
+\item 
+\hypertarget{class_input_list_thread_5fb537a033a081b7533996ad29b5919f}{
+QStringList \textbf{measlist}}
+\label{class_input_list_thread_5fb537a033a081b7533996ad29b5919f}
+
+\item 
+\hypertarget{class_input_list_thread_2f6e1db59d3e3c6d8d63c9747a2cb10d}{
+QMutex \textbf{lock}}
+\label{class_input_list_thread_2f6e1db59d3e3c6d8d63c9747a2cb10d}
+
+\item 
+\hypertarget{class_input_list_thread_a4bb51d624eee9f59d16b065c4794f57}{
+bool \textbf{rescan}}
+\label{class_input_list_thread_a4bb51d624eee9f59d16b065c4794f57}
+
+\item 
+\hypertarget{class_input_list_thread_eb0dc14252f9245e24297bc0a13b5bc3}{
+bool \textbf{abort}}
+\label{class_input_list_thread_eb0dc14252f9245e24297bc0a13b5bc3}
+
+\item 
+\hypertarget{class_input_list_thread_b9a18a522ff54868e0e192154967785a}{
+\hyperlink{class_dataset}{Dataset} $\ast$ \textbf{settings}}
+\label{class_input_list_thread_b9a18a522ff54868e0e192154967785a}
+
+\item 
+\hypertarget{class_input_list_thread_f5a68184f3d835bb3e30100ecfd7c5f1}{
+QDir \textbf{dir}}
+\label{class_input_list_thread_f5a68184f3d835bb3e30100ecfd7c5f1}
+
+\item 
+\hypertarget{class_input_list_thread_21744aace7269ffa515f8b20698ef9eb}{
+vector$<$ string $>$ \textbf{extensions}}
+\label{class_input_list_thread_21744aace7269ffa515f8b20698ef9eb}
+
+\item 
+\hypertarget{class_input_list_thread_a79457ebed13681beabc753d5be1bb6f}{
+QDateTime \textbf{lastmodification}}
+\label{class_input_list_thread_a79457ebed13681beabc753d5be1bb6f}
+
+\item 
+\hypertarget{class_input_list_thread_26f4107147cbece4bb488a0ebd0e3374}{
+QWaitCondition \textbf{condition}}
+\label{class_input_list_thread_26f4107147cbece4bb488a0ebd0e3374}
+
+\item 
+\hypertarget{class_input_list_thread_35c4ffb4d542a2651a27e224ce0cfb04}{
+ofstream \textbf{logfile}}
+\label{class_input_list_thread_35c4ffb4d542a2651a27e224ce0cfb04}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Thread class for reading the contents of the directory. 
+
+As reading the contents of the directory is a time conuming task using badly designed proprietary file systems like NTFS this task is put into a separate thread to enshure good performance even when operating on NTFS file systems like the ones used under Windows XP. 
+
+The documentation for this class was generated from the following files:\begin{CompactItemize}
+\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/inputlistthread.h\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/inputlistthread.cpp\item 
+E:/RbCs/lab/iXon cam/imgeval/imgeval/release/moc\_\-inputlistthread.cpp\end{CompactItemize}
